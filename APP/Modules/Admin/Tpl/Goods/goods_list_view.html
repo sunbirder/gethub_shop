@@ -1,0 +1,286 @@
+<!-- $Id: goods_list.htm 17126 2010-04-23 10:30:26Z liuhui $ -->
+<include file='Common:pageheader'/>
+
+<!-- $Id: goods_search.htm 16790 2009-11-10 08:56:15Z wangleisvn $ -->
+<include file='Common:goods_search'/>
+
+  <!-- 商品列表 -->
+  <form method="post" action="" name="listForm" onsubmit="return confirmSubmit(this)">
+    <!-- start goods list -->
+    <div class="list-div" id="listDiv">
+      <table cellpadding="3" cellspacing="1">
+        <tr>
+          <th>
+            <input onclick='listTable.selectAll(this, "checkboxes")' type="checkbox" />
+            <a href="javascript:listTable.sort('goods_id'); ">编号</a>
+            <img src="__IMG__/sort_desc.gif"/>
+          </th>
+          <th>
+            <a href="javascript:listTable.sort('goods_name'); ">商品名称</a>
+          </th>
+          <th>
+            <a href="javascript:listTable.sort('goods_sn'); ">货号</a>
+          </th>
+          <th>
+            <a href="javascript:listTable.sort('shop_price'); ">价格</a>
+          </th>
+          <th>
+            <a href="javascript:listTable.sort('is_on_sale'); ">上架</a>
+          </th>
+          <th>
+            <a href="javascript:listTable.sort('is_best'); ">精品</a>
+          </th>
+          <th>
+            <a href="javascript:listTable.sort('is_new'); ">新品</a>
+          </th>
+          <th>
+            <a href="javascript:listTable.sort('is_hot'); ">热销</a>
+          </th>
+          <th>
+            <a href="javascript:listTable.sort('sort_order'); ">推荐排序</a>
+          </th>
+          <th>
+            <a href="javascript:listTable.sort('goods_number'); ">库存</a>
+          </th>
+          <th>操作</th>
+          <!-- </tr>
+            <tr>
+              <td>
+                <input type="checkbox" name="checkboxes[]" value="33" />
+                33
+              </td>
+              <td class="first-cell" style="">
+                <span onclick="listTable.edit(this, 'edit_goods_name', 33)">我的电脑</span>
+              </td>
+              <td>
+                <span onclick="listTable.edit(this, 'edit_goods_sn', 33)">0017</span>
+              </td>
+              <td align="right">
+                <span onclick="listTable.edit(this, 'edit_goods_price', 33)">99.00</span>
+              </td>
+              <td align="center">
+                <img src="__IMG__/yes.gif" onclick="listTable.toggle(this, 'toggle_on_sale', 33)" />
+              </td>
+              <td align="center">
+                <img src="__IMG__/no.gif" onclick="listTable.toggle(this, 'toggle_best', 33)" />
+              </td>
+              <td align="center">
+                <img src="__IMG__/no.gif" onclick="listTable.toggle(this, 'toggle_new', 33)" />
+              </td>
+              <td align="center">
+                <img src="__IMG__/no.gif" onclick="listTable.toggle(this, 'toggle_hot', 33)" />
+              </td>
+              <td align="center">
+                <span onclick="listTable.edit(this, 'edit_sort_order', 33)">100</span>
+              </td>
+              <td align="right">
+                <span onclick="listTable.edit(this, 'edit_goods_number', 33)">1</span>
+              </td>
+              <td align="center">
+                <a href="../goods.php?id=33" target="_blank" title="查看">
+                  <img src="__IMG__/icon_view.gif" width="16" height="16" border="0" />
+                </a>
+                <a href="goods.php?act=edit&goods_id=33&extension_code=" title="编辑">
+                  <img src="__IMG__/icon_edit.gif" width="16" height="16" border="0" />
+                </a>
+                <a href="goods.php?act=copy&goods_id=33&extension_code=" title="复制">
+                  <img src="__IMG__/icon_copy.gif" width="16" height="16" border="0" />
+                </a>
+                <a href="javascript:;" onclick="listTable.remove(33, '您确实要把该商品放入回收站吗？')" title="回收站">
+                  <img src="__IMG__/icon_trash.gif" width="16" height="16" border="0" />
+                </a>
+                <img src="__IMG__/empty.gif" width="16" height="16" border="0" />
+              </td>
+            </tr> -->
+            <!-- 商品列表 $goods_list -->
+  <foreach name="goods_list" item="goods">
+  <tr>
+    <td>
+      <input type="checkbox" name="checkboxes[]" value="{$goods.goods_id}" />  
+      {$goods.goods_id}
+    </td>
+    <td class="first-cell" style="{if $goods.is_promote}color:red;{/if}">
+      <span onclick="listTable.edit(this, 'edit_goods_name', {$goods.goods_id})">{$goods.goods_name}</span>
+    </td>
+    <td>
+      <span onclick="listTable.edit(this, 'edit_goods_sn', {$goods.goods_id})">{$goods.goods_sn}</span>
+    </td>
+    <td align="right">
+      <span onclick="listTable.edit(this, 'edit_goods_price', {$goods.goods_id})">{$goods.shop_price}</span>
+    </td>
+    <td align="center">
+      <img src="__IMG__/<if condition='$goods.is_on_sale eq 1'>yes<else/>no</if>.gif" onclick="listTable.toggle(this, 'toggle_on_sale', {$goods.goods_id})" />  
+    </td>
+    <td align="center">
+      <img src="__IMG__/<if condition='$goods.is_best eq 1'>yes<else/>no</if>.gif" onclick="listTable.toggle(this, 'toggle_best', {$goods.goods_id})" />  
+    </td>
+    <td align="center">
+      <img src="__IMG__/<if condition='$goods.is_new eq 1'>yes<else/>no</if>.gif" onclick="listTable.toggle(this, 'toggle_new', {$goods.goods_id})" />  
+    </td>
+    <td align="center">
+      <img src="__IMG__/<if condition='$goods.is_hot eq 1'>yes<else/>no</if>.gif" onclick="listTable.toggle(this, 'toggle_hot', {$goods.goods_id})" />  
+    </td>
+    <td align="center">
+      <span onclick="listTable.edit(this, 'edit_sort_order', {$goods.goods_id})">{$goods.sort_order}</span>
+    </td>
+    <td align="center">
+      <span onclick="listTable.edit(this, 'edit_goods_number', {$goods.goods_id})">{$goods.goods_number}</span>
+    </td>
+    <td align="center">
+      <a href="../goods.php?id={$goods.goods_id}" target="_blank" title="查看">
+        <img src="__IMG__/icon_view.gif" width="16" height="16" border="0" />    
+      </a>
+      <a href="goods.php?act=edit&goods_id={$goods.goods_id}" title="编辑">
+        <img src="__IMG__/icon_edit.gif" width="16" height="16" border="0" />    
+      </a>
+      <a href="goods.php?act=copy&goods_id={$goods.goods_id}" title="复制">
+        <img src="__IMG__/icon_copy.gif" width="16" height="16" border="0" />    
+      </a>
+      <a href="javascript:;" onclick="listTable.remove({$goods.goods_id}, '{$lang.trash_goods_confirm}')" title="回收站">
+        <img src="__IMG__/icon_trash.gif" width="16" height="16" border="0" />    
+      </a>
+      <!-- <if condition='$goods.goods_type eq 0'>
+        <a href="goods.php?act=product_list&goods_id={$goods.goods_id}" title="{$lang.item_list}">
+          <img src="__IMG__/icon_docs.gif" width="16" height="16" border="0" />    
+        </a>
+      <else/>    
+        <img src="__IMG__/empty.gif" width="16" height="16" border="0" />    
+      </if> -->
+    </td>
+  </tr>
+  </foreach>
+          </table>
+          <!-- end goods list -->
+<!-- $Id: page.htm 14216 2008-03-10 02:27:21Z testyang $ -->
+      <include file="Common:page"/>
+
+        </div>
+
+        <div>
+          <input type="hidden" name="act" value="batch" />
+          <select name="type" id="selAction" onchange="changeAction()">
+            <option value="">请选择...</option>
+            <option value="trash">回收站</option>
+            <option value="on_sale">上架</option>
+            <option value="not_on_sale">下架</option>
+            <option value="best">精品</option>
+            <option value="not_best">取消精品</option>
+            <option value="new">新品</option>
+            <option value="not_new">取消新品</option>
+            <option value="hot">热销</option>
+            <option value="not_hot">取消热销</option>
+            <option value="move_to">转移到分类</option>
+            <option value="suppliers_move_to">转移到供货商</option>
+
+          </select>
+          <select name="target_cat" style="display:none">
+            <option value="0">请选择...</option>
+            <option value="6" >手机配件</option>
+            <option value="9" >&nbsp;&nbsp;&nbsp;&nbsp;电池</option>
+            <option value="11" >&nbsp;&nbsp;&nbsp;&nbsp;读卡器和内存卡</option>
+            <option value="7" >&nbsp;&nbsp;&nbsp;&nbsp;充电器</option>
+            <option value="8" >&nbsp;&nbsp;&nbsp;&nbsp;耳机</option>
+            <option value="1" >手机类型</option>
+            <option value="3" >&nbsp;&nbsp;&nbsp;&nbsp;GSM手机</option>
+            <option value="4" >&nbsp;&nbsp;&nbsp;&nbsp;3G手机</option>
+            <option value="5" >&nbsp;&nbsp;&nbsp;&nbsp;双模手机</option>
+            <option value="2" >&nbsp;&nbsp;&nbsp;&nbsp;CDMA手机</option>
+            <option value="12" >充值卡</option>
+            <option value="13" >&nbsp;&nbsp;&nbsp;&nbsp;小灵通/固话充值卡</option>
+            <option value="14" >&nbsp;&nbsp;&nbsp;&nbsp;移动手机充值卡</option>
+            <option value="15" >&nbsp;&nbsp;&nbsp;&nbsp;联通手机充值卡</option>
+          </select>
+          <!--二级主菜单：转移供货商-->
+          <select name="suppliers_id" style="display:none">
+            <option value="-1">请选择...</option>
+            <option value="0">转移到网店</option>
+            <option value="1">北京供货商</option>
+            <option value="2">上海供货商</option>
+          </select>
+          <!--end!-->
+
+          <input type="hidden" name="extension_code" value="" />
+          <input type="submit" value=" 确定 " id="btnSubmit" name="btnSubmit" class="button" disabled="true" />
+        </div>
+      </form>
+
+      <script type="text/javascript">
+    // listTable属性初始化
+    // listTable.recordCount = 24;// {$COUNT}
+    // listTable.filter.cat_id = '0';
+    // listTable.filter.intro_type = '';
+    // listTable.filter.is_promote = '0';
+    // listTable.filter.stock_warning = '0';
+    // listTable.filter.brand_id = '0';
+    // listTable.filter.keyword = '';
+    // listTable.filter.suppliers_id = '';
+    // listTable.filter.is_on_sale = '';
+    // listTable.filter.extension_code = '';
+    // listTable.filter.is_delete = '0';
+    // listTable.filter.real_goods = '1';
+    // listTable.filter.record_count = '24';
+    // listTable.filter.page_count = '1';
+    // listTable.filter.start = '0';// {$START}
+    // 翻页功能, 添加listTable.filter属性
+
+    listTable.pageCount = {$PAGECOUNT};
+    listTable.filter.page_size = {$PAGESIZE};
+    listTable.filter.sortname = 'goods_id';
+    listTable.filter.sortorder = 'DESC';
+    listTable.filter.page = '1';
+
+  
+  
+  // onload = function()
+  // {
+  //   startCheckOrder(); // 开始检查订单
+  //   document.forms['listForm'].reset();
+  // }
+
+  // /**
+  //  * @param: bool ext 其他条件：用于转移分类
+  //  */
+  // function confirmSubmit(frm, ext)
+  // {
+  //     if (frm.elements['type'].value == 'trash')
+  //     {
+  //         return confirm(batch_trash_confirm);
+  //     }
+  //     else if (frm.elements['type'].value == 'not_on_sale')
+  //     {
+  //         return confirm(batch_no_on_sale);
+  //     }
+  //     else if (frm.elements['type'].value == 'move_to')
+  //     {
+  //         ext = (ext == undefined) ? true : ext;
+  //         return ext && frm.elements['target_cat'].value != 0;
+  //     }
+  //     else if (frm.elements['type'].value == '')
+  //     {
+  //         return false;
+  //     }
+  //     else
+  //     {
+  //         return true;
+  //     }
+  // }
+
+  // function changeAction()
+  // {
+  //     var frm = document.forms['listForm'];
+
+  //     // 切换分类列表的显示
+  //     frm.elements['target_cat'].style.display = frm.elements['type'].value == 'move_to' ? '' : 'none';
+      
+  //           frm.elements['suppliers_id'].style.display = frm.elements['type'].value == 'suppliers_move_to' ? '' : 'none';
+      
+  //     if (!document.getElementById('btnSubmit').disabled &&
+  //         confirmSubmit(frm, false))
+  //     {
+  //         frm.submit();
+  //     }
+  // }
+
+</script>
+ 
+ <include file="Common:pagefooter"/>
