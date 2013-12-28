@@ -1,0 +1,462 @@
+[ 2013-12-24T20:59:27+08:00 ] 127.0.0.1 /shop/index.php/Admin
+ERR: 模板不存在[./APP/Modules/Admin/Tpl/Index/index.html]
+
+[ 2013-12-24T21:00:34+08:00 ] 127.0.0.1 /shop/index.php/top.htm
+ERR: 无法加载模块:top.htm
+
+[ 2013-12-24T21:00:34+08:00 ] 127.0.0.1 /shop/index.php/left.htm
+ERR: 无法加载模块:left.htm
+
+[ 2013-12-24T21:00:34+08:00 ] 127.0.0.1 /shop/index.php/toggle.htm
+ERR: 无法加载模块:toggle.htm
+
+[ 2013-12-24T21:00:34+08:00 ] 127.0.0.1 /shop/index.php/right.htm
+ERR: 无法加载模块:right.htm
+
+[ 2013-12-24T21:07:01+08:00 ] 127.0.0.1 /shop/index.php/top.htm
+ERR: 无法加载模块:top.htm
+
+[ 2013-12-24T21:07:01+08:00 ] 127.0.0.1 /shop/index.php/left.htm
+ERR: 无法加载模块:left.htm
+
+[ 2013-12-24T21:07:01+08:00 ] 127.0.0.1 /shop/index.php/toggle.htm
+ERR: 无法加载模块:toggle.htm
+
+[ 2013-12-24T21:07:01+08:00 ] 127.0.0.1 /shop/index.php/right.htm
+ERR: 无法加载模块:right.htm
+
+[ 2013-12-24T21:07:27+08:00 ] 127.0.0.1 /shop/index.php/left.htm
+ERR: 无法加载模块:left.htm
+
+[ 2013-12-24T21:07:27+08:00 ] 127.0.0.1 /shop/index.php/right.htm
+ERR: 无法加载模块:right.htm
+
+[ 2013-12-24T21:07:27+08:00 ] 127.0.0.1 /shop/index.php/toggle.htm
+ERR: 无法加载模块:toggle.htm
+
+[ 2013-12-24T21:07:27+08:00 ] 127.0.0.1 /shop/index.php/top.htm
+ERR: 无法加载模块:top.htm
+
+[ 2013-12-24T21:28:16+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/top_view
+ERR: 模板不存在[./APP/Modules/Admin/Tpl/Index/top_view.html]
+
+[ 2013-12-24T21:28:16+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/right_view
+ERR: 模板不存在[./APP/Modules/Admin/Tpl/Index/right_view.html]
+
+[ 2013-12-24T21:28:16+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/left_view
+ERR: 模板不存在[./APP/Modules/Admin/Tpl/Index/left_view.html]
+
+[ 2013-12-24T21:30:52+08:00 ] 127.0.0.1 //shop/index.php/Admin/Index/top_view
+ERR: 模板不存在[./APP/Modules/Admin/Tpl/Index/top_view.html]
+
+[ 2013-12-24T21:33:37+08:00 ] 127.0.0.1 //shop/index.php/Admin/Index/top_view
+ERR: 模板不存在[./APP/Modules/Admin/Tpl/Index/top_view.html]
+
+[ 2013-12-24T21:33:49+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/top_view
+ERR: 模板不存在[./APP/Modules/Admin/Tpl/Index/top_view.html]
+
+[ 2013-12-24T21:35:13+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/top_view
+ERR: 模板不存在[./APP/Modules/Admin/Tpl/Index/top_frame.html]
+
+[ 2013-12-24T21:35:14+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/top_view
+ERR: 模板不存在[./APP/Modules/Admin/Tpl/Index/top_frame.html]
+
+[ 2013-12-24T21:35:45+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/top_view
+ERR: 模板不存在[./APP/Modules/Admin/Tpl/Index/top_frame.html]
+
+[ 2013-12-24T21:35:46+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/top_view
+ERR: 模板不存在[./APP/Modules/Admin/Tpl/Index/top_frame.html]
+
+[ 2013-12-24T21:35:47+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/top_view
+ERR: 模板不存在[./APP/Modules/Admin/Tpl/Index/top_frame.html]
+
+[ 2013-12-24T21:35:47+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/top_view
+ERR: 模板不存在[./APP/Modules/Admin/Tpl/Index/top_frame.html]
+
+[ 2013-12-24T21:35:47+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/top_view
+ERR: 模板不存在[./APP/Modules/Admin/Tpl/Index/top_frame.html]
+
+[ 2013-12-24T21:36:38+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/js/transport.js
+ERR: 非法操作:js
+
+[ 2013-12-24T21:36:45+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/js/transport.js
+ERR: 非法操作:js
+
+[ 2013-12-24T21:36:45+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/js/common.js
+ERR: 非法操作:js
+
+[ 2013-12-24T21:36:45+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/menu_ext.php
+ERR: 非法操作:menu_ext.php
+
+[ 2013-12-24T21:36:45+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/js/global.js
+ERR: 非法操作:js
+
+[ 2013-12-24T21:36:45+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/js/transport.js
+ERR: 非法操作:js
+
+[ 2013-12-24T21:36:45+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/js/utils.js
+ERR: 非法操作:js
+
+[ 2013-12-24T21:36:45+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/js/utils.js
+ERR: 非法操作:js
+
+[ 2013-12-24T21:36:45+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/js/transport.js
+ERR: 非法操作:js
+
+[ 2013-12-24T21:36:45+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/images/online.swf
+ERR: 非法操作:images
+
+[ 2013-12-24T21:41:11+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/menu_ext.php
+ERR: 非法操作:menu_ext.php
+
+[ 2013-12-24T21:41:11+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/js/transport.js
+ERR: 非法操作:js
+
+[ 2013-12-24T21:41:11+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/js/global.js
+ERR: 非法操作:js
+
+[ 2013-12-24T21:41:11+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/js/common.js
+ERR: 非法操作:js
+
+[ 2013-12-24T21:41:11+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/js/utils.js
+ERR: 非法操作:js
+
+[ 2013-12-24T21:41:11+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/js/transport.js
+ERR: 非法操作:js
+
+[ 2013-12-24T21:41:11+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/js/utils.js
+ERR: 非法操作:js
+
+[ 2013-12-24T21:41:11+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/js/transport.js
+ERR: 非法操作:js
+
+[ 2013-12-24T21:41:11+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/images/online.swf
+ERR: 非法操作:images
+
+[ 2013-12-24T21:42:12+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/menu_ext.php
+ERR: 非法操作:menu_ext.php
+
+[ 2013-12-24T21:42:12+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/js/common.js
+ERR: 非法操作:js
+
+[ 2013-12-24T21:42:12+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/js/transport.js
+ERR: 非法操作:js
+
+[ 2013-12-24T21:42:12+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/js/utils.js
+ERR: 非法操作:js
+
+[ 2013-12-24T21:42:12+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/js/global.js
+ERR: 非法操作:js
+
+[ 2013-12-24T21:42:12+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/js/transport.js
+ERR: 非法操作:js
+
+[ 2013-12-24T21:42:12+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/js/utils.js
+ERR: 非法操作:js
+
+[ 2013-12-24T21:42:12+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/js/transport.js
+ERR: 非法操作:js
+
+[ 2013-12-24T21:42:12+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/images/online.swf
+ERR: 非法操作:images
+
+[ 2013-12-24T21:42:13+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/js/utils.js
+ERR: 非法操作:js
+
+[ 2013-12-24T21:42:13+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/menu_ext.php
+ERR: 非法操作:menu_ext.php
+
+[ 2013-12-24T21:42:13+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/js/global.js
+ERR: 非法操作:js
+
+[ 2013-12-24T21:42:13+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/js/transport.js
+ERR: 非法操作:js
+
+[ 2013-12-24T21:42:13+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/js/common.js
+ERR: 非法操作:js
+
+[ 2013-12-24T21:42:13+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/js/utils.js
+ERR: 非法操作:js
+
+[ 2013-12-24T21:42:13+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/js/transport.js
+ERR: 非法操作:js
+
+[ 2013-12-24T21:42:13+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/js/transport.js
+ERR: 非法操作:js
+
+[ 2013-12-24T21:42:13+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/images/online.swf
+ERR: 非法操作:images
+
+[ 2013-12-24T21:42:44+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/js/transport.js
+ERR: 非法操作:js
+
+[ 2013-12-24T21:42:44+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/menu_ext.php
+ERR: 非法操作:menu_ext.php
+
+[ 2013-12-24T21:42:44+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/js/utils.js
+ERR: 非法操作:js
+
+[ 2013-12-24T21:42:44+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/js/global.js
+ERR: 非法操作:js
+
+[ 2013-12-24T21:42:44+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/js/transport.js
+ERR: 非法操作:js
+
+[ 2013-12-24T21:42:44+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/js/common.js
+ERR: 非法操作:js
+
+[ 2013-12-24T21:42:44+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/js/utils.js
+ERR: 非法操作:js
+
+[ 2013-12-24T21:42:44+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/js/transport.js
+ERR: 非法操作:js
+
+[ 2013-12-24T21:42:45+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/images/online.swf
+ERR: 非法操作:images
+
+[ 2013-12-24T22:01:23+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/js/transport.js
+ERR: 非法操作:js
+
+[ 2013-12-24T22:01:23+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/js/common.js
+ERR: 非法操作:js
+
+[ 2013-12-24T22:01:23+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/menu_ext.php
+ERR: 非法操作:menu_ext.php
+
+[ 2013-12-24T22:01:23+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/js/global.js
+ERR: 非法操作:js
+
+[ 2013-12-24T22:01:23+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/js/utils.js
+ERR: 非法操作:js
+
+[ 2013-12-24T22:01:24+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/js/transport.js
+ERR: 非法操作:js
+
+[ 2013-12-24T22:01:24+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/js/utils.js
+ERR: 非法操作:js
+
+[ 2013-12-24T22:01:24+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/js/transport.js
+ERR: 非法操作:js
+
+[ 2013-12-24T22:01:24+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/images/online.swf
+ERR: 非法操作:images
+
+[ 2013-12-24T22:02:25+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/menu_ext.php
+ERR: 非法操作:menu_ext.php
+
+[ 2013-12-24T22:02:25+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/js/global.js
+ERR: 非法操作:js
+
+[ 2013-12-24T22:02:25+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/js/utils.js
+ERR: 非法操作:js
+
+[ 2013-12-24T22:02:25+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/js/transport.js
+ERR: 非法操作:js
+
+[ 2013-12-24T22:02:25+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/js/common.js
+ERR: 非法操作:js
+
+[ 2013-12-24T22:02:25+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/js/utils.js
+ERR: 非法操作:js
+
+[ 2013-12-24T22:02:25+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/js/transport.js
+ERR: 非法操作:js
+
+[ 2013-12-24T22:02:25+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/js/transport.js
+ERR: 非法操作:js
+
+[ 2013-12-24T22:02:25+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/images/online.swf
+ERR: 非法操作:images
+
+[ 2013-12-24T22:04:06+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/js/transport.js
+ERR: 非法操作:js
+
+[ 2013-12-24T22:04:06+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/menu_ext.php
+ERR: 非法操作:menu_ext.php
+
+[ 2013-12-24T22:04:06+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/js/utils.js
+ERR: 非法操作:js
+
+[ 2013-12-24T22:04:06+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/js/global.js
+ERR: 非法操作:js
+
+[ 2013-12-24T22:04:06+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/js/transport.js
+ERR: 非法操作:js
+
+[ 2013-12-24T22:04:06+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/js/common.js
+ERR: 非法操作:js
+
+[ 2013-12-24T22:04:06+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/js/utils.js
+ERR: 非法操作:js
+
+[ 2013-12-24T22:04:06+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/js/transport.js
+ERR: 非法操作:js
+
+[ 2013-12-24T22:05:57+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/menu_ext.php
+ERR: 非法操作:menu_ext.php
+
+[ 2013-12-24T22:05:57+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/index.php?is_ajax=1&act=check_order&1387893957319319
+ERR: 非法操作:index.php
+
+[ 2013-12-24T22:08:57+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/index.php?is_ajax=1&act=check_order&1387894137327327
+ERR: 非法操作:index.php
+
+[ 2013-12-24T22:11:57+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/index.php?is_ajax=1&act=check_order&1387894317327327
+ERR: 非法操作:index.php
+
+[ 2013-12-24T22:14:57+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/index.php?is_ajax=1&act=check_order&1387894497327327
+ERR: 非法操作:index.php
+
+[ 2013-12-24T22:16:44+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/menu_ext.php
+ERR: 非法操作:menu_ext.php
+
+[ 2013-12-24T22:18:28+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/menu_ext.php
+ERR: 非法操作:menu_ext.php
+
+[ 2013-12-24T22:18:28+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/index.php?is_ajax=1&act=check_order&1387894708406406
+ERR: 非法操作:index.php
+
+[ 2013-12-24T22:18:30+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/menu_ext.php
+ERR: 非法操作:menu_ext.php
+
+[ 2013-12-24T22:21:30+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/index.php?is_ajax=1&act=check_order&1387894890848848
+ERR: 非法操作:index.php
+
+[ 2013-12-24T22:24:30+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/index.php?is_ajax=1&act=check_order&1387895070847847
+ERR: 非法操作:index.php
+
+[ 2013-12-24T22:27:30+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/index.php?is_ajax=1&act=check_order&1387895250847847
+ERR: 非法操作:index.php
+
+[ 2013-12-24T22:30:30+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/index.php?is_ajax=1&act=check_order&1387895430832832
+ERR: 非法操作:index.php
+
+[ 2013-12-24T22:33:30+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/index.php?is_ajax=1&act=check_order&1387895610831831
+ERR: 非法操作:index.php
+
+[ 2013-12-24T22:36:30+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/index.php?is_ajax=1&act=check_order&1387895790831831
+ERR: 非法操作:index.php
+
+[ 2013-12-24T22:39:30+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/index.php?is_ajax=1&act=check_order&1387895970831831
+ERR: 非法操作:index.php
+
+[ 2013-12-24T22:42:30+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/index.php?is_ajax=1&act=check_order&1387896150832832
+ERR: 非法操作:index.php
+
+[ 2013-12-24T22:45:30+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/index.php?is_ajax=1&act=check_order&1387896330830830
+ERR: 非法操作:index.php
+
+[ 2013-12-24T22:48:30+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/index.php?is_ajax=1&act=check_order&1387896510831831
+ERR: 非法操作:index.php
+
+[ 2013-12-24T22:51:30+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/index.php?is_ajax=1&act=check_order&1387896690831831
+ERR: 非法操作:index.php
+
+[ 2013-12-24T22:54:30+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/index.php?is_ajax=1&act=check_order&1387896870828828
+ERR: 非法操作:index.php
+
+[ 2013-12-24T22:56:30+08:00 ] 127.0.0.1 /shop/index.php/Admin/Goods
+ERR: 非法操作:index
+
+[ 2013-12-24T22:57:06+08:00 ] 127.0.0.1 /shop/index.php/Admin/js/transport.js
+ERR: 无法加载模块:js
+
+[ 2013-12-24T22:57:06+08:00 ] 127.0.0.1 /shop/index.php/Admin/Goods/js/common.js
+ERR: 非法操作:js
+
+[ 2013-12-24T22:57:06+08:00 ] 127.0.0.1 /shop/index.php/Admin/js/utils.js
+ERR: 无法加载模块:js
+
+[ 2013-12-24T22:57:07+08:00 ] 127.0.0.1 /shop/index.php/Admin/Goods/js/listtable.js
+ERR: 非法操作:js
+
+[ 2013-12-24T22:57:07+08:00 ] 127.0.0.1 /shop/index.php/Admin/Goods/images/online.swf
+ERR: 非法操作:images
+
+[ 2013-12-24T22:57:30+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/index.php?is_ajax=1&act=check_order&1387897050832832
+ERR: 非法操作:index.php
+
+[ 2013-12-24T22:58:41+08:00 ] 127.0.0.1 /shop/index.php/Admin//shop/Public/Admin/js/utils.js
+ERR: 无法加载模块:shop
+
+[ 2013-12-24T22:58:43+08:00 ] 127.0.0.1 /shop/index.php/Admin/Goods/images/online.swf
+ERR: 非法操作:images
+
+[ 2013-12-24T22:59:42+08:00 ] 127.0.0.1 /shop/index.php/Admin//shop/Public/Admin/js/utils.js
+ERR: 无法加载模块:shop
+
+[ 2013-12-24T23:00:30+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/index.php?is_ajax=1&act=check_order&1387897230832832
+ERR: 非法操作:index.php
+
+[ 2013-12-24T23:03:30+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/index.php?is_ajax=1&act=check_order&1387897410815815
+ERR: 非法操作:index.php
+
+[ 2013-12-24T23:06:30+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/index.php?is_ajax=1&act=check_order&1387897590815815
+ERR: 非法操作:index.php
+
+[ 2013-12-24T23:06:57+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/menu_ext.php
+ERR: 非法操作:menu_ext.php
+
+[ 2013-12-24T23:07:00+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/menu_ext.php
+ERR: 非法操作:menu_ext.php
+
+[ 2013-12-24T23:07:01+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/menu_ext.php
+ERR: 非法操作:menu_ext.php
+
+[ 2013-12-24T23:07:02+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/menu_ext.php
+ERR: 非法操作:menu_ext.php
+
+[ 2013-12-24T23:07:04+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/menu_ext.php
+ERR: 非法操作:menu_ext.php
+
+[ 2013-12-24T23:10:04+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/index.php?is_ajax=1&act=check_order&1387897804873873
+ERR: 非法操作:index.php
+
+[ 2013-12-24T23:13:04+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/index.php?is_ajax=1&act=check_order&1387897984871871
+ERR: 非法操作:index.php
+
+[ 2013-12-24T23:16:04+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/index.php?is_ajax=1&act=check_order&1387898164873873
+ERR: 非法操作:index.php
+
+[ 2013-12-24T23:19:04+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/index.php?is_ajax=1&act=check_order&1387898344872872
+ERR: 非法操作:index.php
+
+[ 2013-12-24T23:22:04+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/index.php?is_ajax=1&act=check_order&1387898524871871
+ERR: 非法操作:index.php
+
+[ 2013-12-24T23:25:04+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/index.php?is_ajax=1&act=check_order&1387898704872872
+ERR: 非法操作:index.php
+
+[ 2013-12-24T23:28:04+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/index.php?is_ajax=1&act=check_order&1387898884873873
+ERR: 非法操作:index.php
+
+[ 2013-12-24T23:31:04+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/index.php?is_ajax=1&act=check_order&1387899064873873
+ERR: 非法操作:index.php
+
+[ 2013-12-24T23:34:04+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/index.php?is_ajax=1&act=check_order&1387899244871871
+ERR: 非法操作:index.php
+
+[ 2013-12-24T23:37:04+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/index.php?is_ajax=1&act=check_order&1387899424855855
+ERR: 非法操作:index.php
+
+[ 2013-12-24T23:40:04+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/index.php?is_ajax=1&act=check_order&1387899604855855
+ERR: 非法操作:index.php
+
+[ 2013-12-24T23:43:04+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/index.php?is_ajax=1&act=check_order&1387899784856856
+ERR: 非法操作:index.php
+
+[ 2013-12-24T23:46:04+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/index.php?is_ajax=1&act=check_order&1387899964855855
+ERR: 非法操作:index.php
+
+[ 2013-12-24T23:49:04+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/index.php?is_ajax=1&act=check_order&1387900144855855
+ERR: 非法操作:index.php
+
+[ 2013-12-24T23:52:04+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/index.php?is_ajax=1&act=check_order&1387900324856856
+ERR: 非法操作:index.php
+
+[ 2013-12-24T23:55:04+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/index.php?is_ajax=1&act=check_order&1387900504855855
+ERR: 非法操作:index.php
+
+[ 2013-12-24T23:58:04+08:00 ] 127.0.0.1 /shop/index.php/Admin/Index/index.php?is_ajax=1&act=check_order&1387900684856856
+ERR: 非法操作:index.php
+
