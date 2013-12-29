@@ -29,8 +29,11 @@ var listTable = new Object;
 
 listTable.query = "query";
 listTable.filter = new Object;
-listTable.url = location.href.lastIndexOf("?") == -1 ? location.href.substring((location.href.lastIndexOf("/")) + 1) : location.href.substring((location.href.lastIndexOf("/")) + 1, location.href.lastIndexOf("?"));
-
+// listTable.url = location.href.lastIndexOf("?") == -1 ? location.href.substring((location.href.lastIndexOf("/")) + 1) : location.href.substring((location.href.lastIndexOf("/")) + 1, location.href.lastIndexOf("?"));
+// listTable.url = location.href.substring(0, (location.href.lastIndexOf("/")) + 1);
+// listTable.url += 'goods_curd_json';
+listTable.url = 'goods_curd_json';
+var url = 'goods_list_json';
 /**
  * 创建一个可编辑区
  */
@@ -107,6 +110,7 @@ listTable.edit = function(obj, act, id)
  */
 listTable.toggle = function(obj, act, id)
 {
+	// var img_url = "123";
   var val = (obj.src.match(/yes.gif/i)) ? 0 : 1;
 
   var res = Ajax.call(this.url, "act="+act+"&val=" + val + "&id=" +id, null, "POST", "JSON", false);
@@ -118,7 +122,7 @@ listTable.toggle = function(obj, act, id)
 
   if (res.error == 0)
   {
-    obj.src = (res.content > 0) ? 'images/yes.gif' : 'images/no.gif';
+    obj.src = (res.content > 0) ? img_url+'/yes.gif' : img_url+'/no.gif';
   }
 }
 
@@ -150,7 +154,7 @@ listTable.sort = function(sortname, sortorder)
 
   this.filter['page_size'] = this.getPageSize();
 
-  Ajax.call(this.url, args, this.listCallback, "POST", "JSON");
+  Ajax.call(url, args, this.listCallback, "POST", "JSON");
 }
 
 /**
@@ -174,7 +178,7 @@ listTable.loadList = function()
 {
   var args = "act="+this.query+"" + this.compileFilter();
 
-  Ajax.call(this.url, args, this.listCallback, "POST", "JSON");
+  Ajax.call(url, args, this.listCallback, "POST", "JSON");
 }
 
 /**

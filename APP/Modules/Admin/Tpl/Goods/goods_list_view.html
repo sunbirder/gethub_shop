@@ -1,17 +1,15 @@
-<!-- $Id: goods_list.htm 17126 2010-04-23 10:30:26Z liuhui $ -->
-<include file='Common:pageheader'/>
 
 <!-- $Id: goods_search.htm 16790 2009-11-10 08:56:15Z wangleisvn $ -->
-<include file='Common:goods_search'/>
+<include file='goods_search'/>
 
   <!-- 商品列表 -->
-  <form method="post" action="" name="listForm" onsubmit="return confirmSubmit(this)">
+  <form method="post" action="__GOODSURL__/goods_curd_bath" name="listForm" onsubmit="return confirmSubmit(this)">
     <!-- start goods list -->
     <div class="list-div" id="listDiv">
       <table cellpadding="3" cellspacing="1">
         <tr>
           <th>
-            <input onclick='listTable.selectAll(this, "checkboxes")' type="checkbox" />
+            <input onclick="listTable.selectAll(this, 'checkboxes')" type="checkbox" />
             <a href="javascript:listTable.sort('goods_id'); ">编号</a>
             <img src="__IMG__/sort_desc.gif"/>
           </th>
@@ -43,55 +41,6 @@
             <a href="javascript:listTable.sort('goods_number'); ">库存</a>
           </th>
           <th>操作</th>
-          <!-- </tr>
-            <tr>
-              <td>
-                <input type="checkbox" name="checkboxes[]" value="33" />
-                33
-              </td>
-              <td class="first-cell" style="">
-                <span onclick="listTable.edit(this, 'edit_goods_name', 33)">我的电脑</span>
-              </td>
-              <td>
-                <span onclick="listTable.edit(this, 'edit_goods_sn', 33)">0017</span>
-              </td>
-              <td align="right">
-                <span onclick="listTable.edit(this, 'edit_goods_price', 33)">99.00</span>
-              </td>
-              <td align="center">
-                <img src="__IMG__/yes.gif" onclick="listTable.toggle(this, 'toggle_on_sale', 33)" />
-              </td>
-              <td align="center">
-                <img src="__IMG__/no.gif" onclick="listTable.toggle(this, 'toggle_best', 33)" />
-              </td>
-              <td align="center">
-                <img src="__IMG__/no.gif" onclick="listTable.toggle(this, 'toggle_new', 33)" />
-              </td>
-              <td align="center">
-                <img src="__IMG__/no.gif" onclick="listTable.toggle(this, 'toggle_hot', 33)" />
-              </td>
-              <td align="center">
-                <span onclick="listTable.edit(this, 'edit_sort_order', 33)">100</span>
-              </td>
-              <td align="right">
-                <span onclick="listTable.edit(this, 'edit_goods_number', 33)">1</span>
-              </td>
-              <td align="center">
-                <a href="../goods.php?id=33" target="_blank" title="查看">
-                  <img src="__IMG__/icon_view.gif" width="16" height="16" border="0" />
-                </a>
-                <a href="goods.php?act=edit&goods_id=33&extension_code=" title="编辑">
-                  <img src="__IMG__/icon_edit.gif" width="16" height="16" border="0" />
-                </a>
-                <a href="goods.php?act=copy&goods_id=33&extension_code=" title="复制">
-                  <img src="__IMG__/icon_copy.gif" width="16" height="16" border="0" />
-                </a>
-                <a href="javascript:;" onclick="listTable.remove(33, '您确实要把该商品放入回收站吗？')" title="回收站">
-                  <img src="__IMG__/icon_trash.gif" width="16" height="16" border="0" />
-                </a>
-                <img src="__IMG__/empty.gif" width="16" height="16" border="0" />
-              </td>
-            </tr> -->
             <!-- 商品列表 $goods_list -->
   <foreach name="goods_list" item="goods">
   <tr>
@@ -99,7 +48,7 @@
       <input type="checkbox" name="checkboxes[]" value="{$goods.goods_id}" />  
       {$goods.goods_id}
     </td>
-    <td class="first-cell" style="{if $goods.is_promote}color:red;{/if}">
+    <td class="first-cell" style="<if condition='$goods.is_promote eq 1'>color:red;</if>">
       <span onclick="listTable.edit(this, 'edit_goods_name', {$goods.goods_id})">{$goods.goods_name}</span>
     </td>
     <td>
@@ -136,11 +85,11 @@
       <a href="goods.php?act=copy&goods_id={$goods.goods_id}" title="复制">
         <img src="__IMG__/icon_copy.gif" width="16" height="16" border="0" />    
       </a>
-      <a href="javascript:;" onclick="listTable.remove({$goods.goods_id}, '{$lang.trash_goods_confirm}')" title="回收站">
+      <a href="javascript:;" onclick="listTable.remove({$goods.goods_id}, '您确实要把该商品放入回收站吗？')" title="回收站">
         <img src="__IMG__/icon_trash.gif" width="16" height="16" border="0" />    
       </a>
       <!-- <if condition='$goods.goods_type eq 0'>
-        <a href="goods.php?act=product_list&goods_id={$goods.goods_id}" title="{$lang.item_list}">
+        <a href="goods.php?act=product_list&goods_id={$goods.goods_id}" title="{货品列表}">
           <img src="__IMG__/icon_docs.gif" width="16" height="16" border="0" />    
         </a>
       <else/>    
@@ -191,7 +140,7 @@
             <option value="15" >&nbsp;&nbsp;&nbsp;&nbsp;联通手机充值卡</option>
           </select>
           <!--二级主菜单：转移供货商-->
-          <select name="suppliers_id" style="display:none">
+         <select name="suppliers_id" style="display:none">
             <option value="-1">请选择...</option>
             <option value="0">转移到网店</option>
             <option value="1">北京供货商</option>
@@ -221,6 +170,8 @@
     // listTable.filter.record_count = '24';
     // listTable.filter.page_count = '1';
     // listTable.filter.start = '0';// {$START}
+
+    var img_url = "__IMG__";
     // 翻页功能, 添加listTable.filter属性
 
     listTable.pageCount = {$PAGECOUNT};
@@ -231,56 +182,55 @@
 
   
   
-  // onload = function()
-  // {
-  //   startCheckOrder(); // 开始检查订单
-  //   document.forms['listForm'].reset();
-  // }
+  onload = function()
+  {
+    startCheckOrder(); // 开始检查订单
+    document.forms['listForm'].reset();
+  }
 
-  // /**
-  //  * @param: bool ext 其他条件：用于转移分类
-  //  */
-  // function confirmSubmit(frm, ext)
-  // {
-  //     if (frm.elements['type'].value == 'trash')
-  //     {
-  //         return confirm(batch_trash_confirm);
-  //     }
-  //     else if (frm.elements['type'].value == 'not_on_sale')
-  //     {
-  //         return confirm(batch_no_on_sale);
-  //     }
-  //     else if (frm.elements['type'].value == 'move_to')
-  //     {
-  //         ext = (ext == undefined) ? true : ext;
-  //         return ext && frm.elements['target_cat'].value != 0;
-  //     }
-  //     else if (frm.elements['type'].value == '')
-  //     {
-  //         return false;
-  //     }
-  //     else
-  //     {
-  //         return true;
-  //     }
-  // }
+  /**
+   * 批量处理操作
+   * @param: bool ext 其他条件：用于转移分类
+   */
+  function confirmSubmit(frm, ext)
+  {
+      if (frm.elements['type'].value == 'trash')
+      {
+          return confirm(batch_trash_confirm);
+      }
+      else if (frm.elements['type'].value == 'not_on_sale')
+      {
+          return confirm(batch_no_on_sale);
+      }
+      else if (frm.elements['type'].value == 'move_to')
+      {
+          ext = (ext == undefined) ? true : ext;
+          return ext && frm.elements['target_cat'].value != 0;
+      }
+      else if (frm.elements['type'].value == '')
+      {
+          return false;
+      }
+      else
+      {
+          return true;
+      }
+  }
 
-  // function changeAction()
-  // {
-  //     var frm = document.forms['listForm'];
+  function changeAction()
+  {
+      var frm = document.forms['listForm'];
 
-  //     // 切换分类列表的显示
-  //     frm.elements['target_cat'].style.display = frm.elements['type'].value == 'move_to' ? '' : 'none';
+      // 切换分类列表的显示
+      frm.elements['target_cat'].style.display = frm.elements['type'].value == 'move_to' ? '' : 'none';
       
-  //           frm.elements['suppliers_id'].style.display = frm.elements['type'].value == 'suppliers_move_to' ? '' : 'none';
+      frm.elements['suppliers_id'].style.display = frm.elements['type'].value == 'suppliers_move_to' ? '' : 'none';
       
-  //     if (!document.getElementById('btnSubmit').disabled &&
-  //         confirmSubmit(frm, false))
-  //     {
-  //         frm.submit();
-  //     }
-  // }
+      if (!document.getElementById('btnSubmit').disabled && confirmSubmit(frm, false))
+      {
+          frm.submit();
+      }
+  }
 
 </script>
  
- <include file="Common:pagefooter"/>

@@ -167,24 +167,6 @@ var cancel_color = "无样式";
           <th>
             <a href="javascript:listTable.sort('shop_price'); ">价格</a>
           </th>
-          <th>
-            <a href="javascript:listTable.sort('is_on_sale'); ">上架</a>
-          </th>
-          <th>
-            <a href="javascript:listTable.sort('is_best'); ">精品</a>
-          </th>
-          <th>
-            <a href="javascript:listTable.sort('is_new'); ">新品</a>
-          </th>
-          <th>
-            <a href="javascript:listTable.sort('is_hot'); ">热销</a>
-          </th>
-          <th>
-            <a href="javascript:listTable.sort('sort_order'); ">推荐排序</a>
-          </th>
-          <th>
-            <a href="javascript:listTable.sort('goods_number'); ">库存</a>
-          </th>
           <th>操作</th>
             <!-- 商品列表 $goods_list -->
   <?php if(is_array($goods_list)): foreach($goods_list as $key=>$goods): ?><tr>
@@ -193,50 +175,17 @@ var cancel_color = "无样式";
       <?php echo ($goods["goods_id"]); ?>
     </td>
     <td class="first-cell" style="<?php if($goods["is_promote"] == 1): ?>color:red;<?php endif; ?>">
-      <span onclick="listTable.edit(this, 'edit_goods_name', <?php echo ($goods["goods_id"]); ?>)"><?php echo ($goods["goods_name"]); ?></span>
+      <span><?php echo ($goods["goods_name"]); ?></span>
     </td>
     <td>
-      <span onclick="listTable.edit(this, 'edit_goods_sn', <?php echo ($goods["goods_id"]); ?>)"><?php echo ($goods["goods_sn"]); ?></span>
+      <span><?php echo ($goods["goods_sn"]); ?></span>
     </td>
     <td align="right">
-      <span onclick="listTable.edit(this, 'edit_goods_price', <?php echo ($goods["goods_id"]); ?>)"><?php echo ($goods["shop_price"]); ?></span>
+      <span><?php echo ($goods["shop_price"]); ?></span>
     </td>
     <td align="center">
-      <img src="__IMG__/<?php if($goods["is_on_sale"] == 1): ?>yes<?php else: ?>no<?php endif; ?>.gif" onclick="listTable.toggle(this, 'toggle_on_sale', <?php echo ($goods["goods_id"]); ?>)" />  
-    </td>
-    <td align="center">
-      <img src="__IMG__/<?php if($goods["is_best"] == 1): ?>yes<?php else: ?>no<?php endif; ?>.gif" onclick="listTable.toggle(this, 'toggle_best', <?php echo ($goods["goods_id"]); ?>)" />  
-    </td>
-    <td align="center">
-      <img src="__IMG__/<?php if($goods["is_new"] == 1): ?>yes<?php else: ?>no<?php endif; ?>.gif" onclick="listTable.toggle(this, 'toggle_new', <?php echo ($goods["goods_id"]); ?>)" />  
-    </td>
-    <td align="center">
-      <img src="__IMG__/<?php if($goods["is_hot"] == 1): ?>yes<?php else: ?>no<?php endif; ?>.gif" onclick="listTable.toggle(this, 'toggle_hot', <?php echo ($goods["goods_id"]); ?>)" />  
-    </td>
-    <td align="center">
-      <span onclick="listTable.edit(this, 'edit_sort_order', <?php echo ($goods["goods_id"]); ?>)"><?php echo ($goods["sort_order"]); ?></span>
-    </td>
-    <td align="center">
-      <span onclick="listTable.edit(this, 'edit_goods_number', <?php echo ($goods["goods_id"]); ?>)"><?php echo ($goods["goods_number"]); ?></span>
-    </td>
-    <td align="center">
-      <a href="../goods.php?id=<?php echo ($goods["goods_id"]); ?>" target="_blank" title="查看">
-        <img src="__IMG__/icon_view.gif" width="16" height="16" border="0" />    
-      </a>
-      <a href="goods.php?act=edit&goods_id=<?php echo ($goods["goods_id"]); ?>" title="编辑">
-        <img src="__IMG__/icon_edit.gif" width="16" height="16" border="0" />    
-      </a>
-      <a href="goods.php?act=copy&goods_id=<?php echo ($goods["goods_id"]); ?>" title="复制">
-        <img src="__IMG__/icon_copy.gif" width="16" height="16" border="0" />    
-      </a>
-      <a href="javascript:;" onclick="listTable.remove(<?php echo ($goods["goods_id"]); ?>, '您确实要把该商品放入回收站吗？')" title="回收站">
-        <img src="__IMG__/icon_trash.gif" width="16" height="16" border="0" />    
-      </a>
-      <!-- <?php if($goods["goods_type"] == 0): ?><a href="goods.php?act=product_list&goods_id=<?php echo ($goods["goods_id"]); ?>" title="{货品列表}">
-          <img src="__IMG__/icon_docs.gif" width="16" height="16" border="0" />    
-        </a>
-      <?php else: ?>    
-        <img src="__IMG__/empty.gif" width="16" height="16" border="0" /><?php endif; ?> -->
+      <a href="javascript:;" onclick="listTable.remove(<?php echo ($goods["goods_id"]); ?>, '您确实要把该商品还原吗？', 'restore_goods')">还原</a> |
+      <a href="javascript:;" onclick="listTable.remove(<?php echo ($goods["goods_id"]); ?>, '您确实要删除该商品吗？', 'drop_goods')">删除</a>
     </td>
   </tr><?php endforeach; endif; ?>
           </table>
@@ -331,7 +280,6 @@ var cancel_color = "无样式";
     // listTable.filter.suppliers_id = '';
     // listTable.filter.is_on_sale = '';
     // listTable.filter.extension_code = '';
-    // listTable.filter.is_delete = '0';
     // listTable.filter.real_goods = '1';
     // listTable.filter.record_count = '24';
     // listTable.filter.page_count = '1';
@@ -345,7 +293,7 @@ var cancel_color = "无样式";
     listTable.filter.sortname = 'goods_id';
     listTable.filter.sortorder = 'DESC';
     listTable.filter.page = '1';
-
+    listTable.filter.is_delete = '1';
   
   
   onload = function()

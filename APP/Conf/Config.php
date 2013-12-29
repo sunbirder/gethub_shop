@@ -1,7 +1,6 @@
 <?php
 return array(
 	//'配置项'=>'配置值'
-
 	// 数据库配置
 	// 'DB_HOST'		=>	'mysql-s',
 	// 'DB_USER'		=>	's2056183admin',
@@ -27,6 +26,11 @@ return array(
 	// 'DATA_CACHE_TYPE' => 'Memcache',									// 不能判断服务器是否开启memcache, 注释掉
 	'MEMCACHE_HOST'   => 'tcp://127.0.0.1:11211',						// 预设值
 	'DATA_CACHE_TIME' => '3600',										// 预设值
+
+	// 模板布局
+	'LAYOUT_ON'=>true,
+	'LAYOUT_NAME'=>'layout',
+
 
 );
 ?>

@@ -9,8 +9,10 @@
 			$this->model = M();
 		}
 
-		public function goods_list($sortname, $sortorder, $page, $page_size, $cat_id, $brand_id, $intro_type, $suppliers_id, $is_on_sale, $keyword){
-
+		// public function goods_list($sortname, $sortorder, $page, $page_size, $cat_id, $brand_id, $intro_type, $suppliers_id, $is_on_sale, $keyword){
+		public function goods_list($var_arr){
+			// var_dump($var_arr);
+			extract($var_arr);
 			$sortname = empty($sortname) ? " goods_id" : trim($sortname);	// 排序字段
 			$sortorder = empty($sortorder) ? " desc" : trim($sortorder);	// 排序方式
 			$page = empty($page) ? 1 : intval($page);						// 当前页
@@ -23,8 +25,8 @@
         	$brand_id  = empty($brand_id) ? 0 : intval($brand_id);			// 品牌
         	$keyword   = empty($keyword) ? '' : trim($keyword);				// 关键字
         	$suppliers_id = empty($suppliers_id) ? 0 : intval($suppliers_id);	// 供应商号
-        	$is_on_sale = $is_on_sale === '' ? '' : intval($is_on_sale);
-			
+        	// $is_on_sale = $is_on_sale === '' ? '' : intval($is_on_sale);
+			$is_on_sale = $is_on_sale === 1 || $is_on_sale === 0 ? $is_on_sale : '';
 			$day = getdate();
 			$today = mktime(23, 59, 59, $day['mon'], $day['mday'], $day['year']) - 8*3600; // 当天凌晨时间戳 $timezone * 3600;
 		// 条件语句
@@ -63,19 +65,21 @@
         /* 供货商 */
             $where .= $suppliers_id ? " AND (suppliers_id = '".$suppliers_id."')" : '';
 
+            $where .= empty($is_delete) ? ' AND is_delete = 0' : ' AND is_delete = 1';
             // 查询总商品数量语句
 			$sql_count = "SELECT COUNT(*) 
-							FROM `table('goods')` AS g 
-							WHERE is_delete=0 AND is_real=1";
+							FROM ".table('goods')." AS g 
+							WHERE is_real=1";
 			$sql_count .= $where;
 			$count = $this->model->query($sql_count);
 			// var_dump($count);exit;
 			$date['COUNT'] = $count[0]['COUNT(*)'];
 			// 查询分页商品总数
 			$sql = "SELECT goods_id, goods_name, goods_type, goods_sn, shop_price,
-						   is_on_sale, is_best, is_new, is_hot, sort_order, goods_number, integral 
-					FROM `table('goods')` AS g 
-					WHERE is_delete=0 AND is_real=1";
+						   is_on_sale, is_best, is_new, is_hot, is_promote, 
+						   sort_order, goods_number, integral 
+					FROM ".table('goods')." AS g 
+					WHERE is_real=1";
 			$sql .= $where;
 			$start = ( $page - 1 ) * $page_size;                                     // 起始记录号
 			$sort = " ORDER BY ".$sortname." {$sortorder}";
@@ -86,7 +90,7 @@
 			$date['PAGE'] = $page;
 			$date['PAGECOUNT'] = ceil($date['COUNT']/$page_size);
 			$date['goods_list'] = $this->model->query($sql);
-
+			// die($sql);
 			return $date;
 		}
 	}

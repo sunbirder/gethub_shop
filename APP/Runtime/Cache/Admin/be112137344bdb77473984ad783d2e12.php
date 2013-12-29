@@ -1,4 +1,145 @@
- <div id="footer">
+<?php if (!defined('THINK_PATH')) exit();?>	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>ECSHOP 管理中心 - 商品列表</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link href="__CSS__/general.css" rel="stylesheet" type="text/css" />
+  <link href="__CSS__/main.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="__JS__/transport.js"></script>
+  <script type="text/javascript" src="__JS__/common.js"></script>
+  <script language="JavaScript">
+<!--
+// 这里把JS用到的所有语言都赋值到这里
+var process_request = "正在处理您的请求...";
+var todolist_caption = "记事本";
+var todolist_autosave = "自动保存";
+var todolist_save = "保存";
+var todolist_clear = "清除";
+var todolist_confirm_save = "是否将更改保存到记事本？";
+var todolist_confirm_clear = "是否清空内容？";
+var goods_name_not_null = "商品名称不能为空。";
+var goods_cat_not_null = "商品分类必须选择。";
+var category_cat_not_null = "分类名称不能为空";
+var brand_cat_not_null = "品牌名称不能为空";
+var goods_cat_not_leaf = "您选择的商品分类不是底级分类，请选择底级分类。";
+var shop_price_not_null = "本店售价不能为空。";
+var shop_price_not_number = "本店售价不是数值。";
+var select_please = "请选择...";
+var button_add = "添加";
+var button_del = "删除";
+var spec_value_not_null = "规格不能为空";
+var spec_price_not_number = "加价不是数字";
+var market_price_not_number = "市场价格不是数字";
+var goods_number_not_int = "商品库存不是整数";
+var warn_number_not_int = "库存警告不是整数";
+var promote_not_lt = "促销开始日期不能大于结束日期";
+var promote_start_not_null = "促销开始时间不能为空";
+var promote_end_not_null = "促销结束时间不能为空";
+var drop_img_confirm = "您确实要删除该图片吗？";
+var batch_no_on_sale = "您确实要将选定的商品下架吗？";
+var batch_trash_confirm = "您确实要把选中的商品放入回收站吗？";
+var go_category_page = "本页数据将丢失，确认要去商品分类页添加分类吗？";
+var go_brand_page = "本页数据将丢失，确认要去商品品牌页添加品牌吗？";
+var volume_num_not_null = "请输入优惠数量";
+var volume_num_not_number = "优惠数量不是数字";
+var volume_price_not_null = "请输入优惠价格";
+var volume_price_not_number = "优惠价格不是数字";
+var cancel_color = "无样式";
+//-->
+</script>
+</head>
+<body>
+
+  <h1>
+    <span class="action-span">
+      <a href="goods.php?act=add">添加新商品</a>
+    </span>
+    <span class="action-span1">
+      <a href="index.php?act=main">ECSHOP 管理中心</a>
+    </span>
+    <span id="search_id" class="action-span1">- 商品列表</span>
+    <div style="clear:both"></div>
+  </h1>
+  <script type="text/javascript" src="__JS__/utils.js"></script>
+  <script type="text/javascript" src="__JS__/listtable.js"></script>
+	<div class="main-div">
+<form method="post" action="brand.php" name="theForm" enctype="multipart/form-data" onsubmit="return validate()">
+<table cellspacing="1" cellpadding="3" width="100%">
+  <tr>
+    <td class="label">品牌名称</td>
+    <td><input type="text" name="brand_name" maxlength="60" value="" /><span class="require-field">*</span></td>
+  </tr>
+  <tr>
+    <td class="label">品牌网址</td>
+    <td><input type="text" name="site_url" maxlength="60" size="40" value="" /></td>
+  </tr>
+  <tr>
+    <td class="label"><a href="javascript:showNotice('warn_brandlogo');" title="点击此处查看提示信息">
+        <img src="__IMG__/notice.gif" width="16" height="16" border="0" alt="点击此处查看提示信息"></a>品牌LOGO</td>
+    <td><input type="file" name="brand_logo" id="logo" size="45">    <br /><span class="notice-span" style="display:block"  id="warn_brandlogo">
+        请上传图片，做为品牌的LOGO！        </span>
+    </td>
+  </tr>
+  <tr>
+    <td class="label">品牌描述</td>
+    <td><textarea  name="brand_desc" cols="60" rows="4"  ></textarea></td>
+  </tr>
+  <tr>
+    <td class="label">排序</td>
+    <td><input type="text" name="sort_order" maxlength="40" size="15" value="50" /></td>
+  </tr>
+  <tr>
+    <td class="label">是否显示</td>
+    <td><input type="radio" name="is_show" value="1" checked="checked" /> 是        <input type="radio" name="is_show" value="0"  /> 否        (当品牌下还没有商品的时候，首页及分类页的品牌区将不会显示该品牌。)
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center"><br />
+      <input type="submit" class="button" value=" 确定 " />
+      <input type="reset" class="button" value=" 重置 " />
+      <input type="hidden" name="act" value="insert" />
+      <input type="hidden" name="old_brandname" value="" />
+      <input type="hidden" name="id" value="" />
+      <input type="hidden" name="old_brandlogo" value="">
+    </td>
+  </tr>
+</table>
+</form>
+</div>
+<script type="text/javascript" src="__JS__/utils.js"></script>
+<script type="text/javascript" src="__JS__/validator.js"></script>
+<script language="JavaScript">
+<!--
+document.forms['theForm'].elements['brand_name'].focus();
+onload = function()
+{
+    // 开始检查订单
+    startCheckOrder();
+}
+// 这里把JS用到的所有语言都赋值到这里
+var process_request = "正在处理您的请求...";
+var todolist_caption = "记事本";
+var todolist_autosave = "自动保存";
+var todolist_save = "保存";
+var todolist_clear = "清除";
+var todolist_confirm_save = "是否将更改保存到记事本？";
+var todolist_confirm_clear = "是否清空内容？";
+var no_brandname = "您必须输入品牌名称！";
+var require_num = "排序序号必须是一个数字";
+/**
+ * 检查表单输入的数据
+ */
+function validate()
+{ 
+    validator = new Validator("theForm");
+    validator.required("brand_name",  no_brandname);
+    validator.isNumber("sort_order", require_num, true);
+    return validator.passed();
+}
+//-->
+</script>
+	 <div id="footer">
   <!--       共执行 7 个查询，用时 0.011362 秒，Gzip 已禁用，内存占用 4.157 MB
         <br />-->
         版权所有 &copy; 2005-2010 上海商派网络科技有限公司，并保留所有权利。

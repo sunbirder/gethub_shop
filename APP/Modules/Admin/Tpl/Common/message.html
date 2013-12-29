@@ -1,0 +1,69 @@
+
+<div class="list-div">
+  <div style="background:#FFF; padding: 20px 50px; margin: 2px;">
+    <table width="400" align="center">
+      <tbody><tr>
+        <td width="50" valign="top">
+                    <?php if ($this->_var['msg_type'] == 0): ?>
+					<img src="images/information.gif" width="32" height="32" border="0" alt="information" />
+					<?php elseif ($this->_var['msg_type'] == 1): ?>
+					<img src="images/warning.gif" width="32" height="32" border="0" alt="warning" />
+					<?php else: ?>
+					<img src="images/confirm.gif" width="32" height="32" border="0" alt="confirm" />
+					 <?php endif; ?>
+        </td>
+		<td style="font-size: 14px; font-weight: bold">{<!-- 跳转提示 -->}</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td id="redirectionMsg">
+          <!-- 控制是否自动跳转 -->如果您不做出选择，将在 <span id="spanSeconds">3</span> 秒后跳转到第一个链接地址。        </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>
+          <ul class="msg-link" style="margin:0; padding:0 10px">
+                        <li><a href="goods.php?act=list">商品列表</a></li>
+                      </ul>
+
+        </td>
+      </tr>
+    </tbody></table>
+  </div>
+</div>
+<!-- 控制是否自动跳转 -->
+<script language="JavaScript">
+<!--
+var seconds = 3;
+var defaultUrl = "goods.php?act=list";<!-- 跳转页面 -->
+
+
+onload = function()
+{	
+  if (defaultUrl == 'javascript:history.go(-1)' && window.history.length == 0)
+  {
+    document.getElementById('redirectionMsg').innerHTML = '';
+    return;
+  }
+
+  //window.setInterval(redirection, 1000);
+}
+function redirection()
+{
+  if (seconds &lt;= 0)
+  {
+    window.clearInterval();
+    return;
+  }
+
+  seconds --;
+  document.getElementById('spanSeconds').innerHTML = seconds;
+
+  if (seconds == 0)
+  {
+    window.clearInterval();
+    location.href = defaultUrl;
+  }
+}
+//-->
+</script>

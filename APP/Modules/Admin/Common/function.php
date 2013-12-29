@@ -20,7 +20,7 @@ function goods_list($goods_list)
          <table cellpadding='3' cellspacing='1'>
                                 <tr>
                                   <th>
-                                    <input onclick='listTable.selectAll(this, 'checkboxes')' type='checkbox' />
+                                    <input onclick='listTable.selectAll(this, \"checkboxes\")' type='checkbox' />
                                     <a href=javascript:listTable.sort('goods_id'); >编号</a>
                                     <img src='".__IMG__."/sort_desc.gif'/>
                                   </th>
@@ -58,38 +58,39 @@ function goods_list($goods_list)
         $goods[is_best] = $goods[is_best] ? 'yes' : 'no';
         $goods[is_new] = $goods[is_new] ? 'yes' : 'no';
         $goods[is_hot] = $goods[is_hot] ? 'yes' : 'no';
+        $is_promote_color = $goods['is_promote'] ? 'color:red' : '';
         $str .= "
             <tr>
                 <td>
                   <input type='checkbox' name='checkboxes[]' value='$goods[goods_id]' />  
                   $goods[goods_id]
                 </td>
-                <td class='first-cell' style='if $goods.is_promotecolor:red;/if'>
-                  <span onclick='listTable.edit(this, 'edit_goods_name', $goods[goods_id])'>$goods[goods_name]</span>
+                <td class='first-cell' style='$is_promote_color'>
+                  <span onclick='listTable.edit(this, \"edit_goods_name\", $goods[goods_id])'>$goods[goods_name]</span>
                 </td>
                 <td>
-                  <span onclick='listTable.edit(this, 'edit_goods_sn', $goods[goods_id])'>$goods[goods_sn]</span>
+                  <span onclick='listTable.edit(this, \"edit_goods_sn\", $goods[goods_id])'>$goods[goods_sn]</span>
                 </td>
                 <td align='right'>
-                  <span onclick='listTable.edit(this, 'edit_goods_price', $goods[goods_id])'>$goods[shop_price]</span>
+                  <span onclick='listTable.edit(this, \"edit_goods_price\", $goods[goods_id])'>$goods[shop_price]</span>
                 </td>
                 <td align='center'>
-                  <img src='".__IMG__."/".$goods[is_on_sale].".gif' onclick='listTable.toggle(this, 'toggle_on_sale', $goods[goods_id])' />  
+                  <img src='".__IMG__."/".$goods[is_on_sale].".gif' onclick='listTable.toggle(this, \"toggle_on_sale\", $goods[goods_id])' />  
                 </td>
                 <td align='center'>
-                  <img src='".__IMG__."/".$goods[is_best].".gif' onclick='listTable.toggle(this, 'toggle_best', $goods[goods_id])' />  
+                  <img src='".__IMG__."/".$goods[is_best].".gif' onclick='listTable.toggle(this, \"toggle_best\", $goods[goods_id])' />  
                 </td>
                 <td align='center'>
-                  <img src='".__IMG__."/".$goods[is_new].".gif' onclick='listTable.toggle(this, 'toggle_new', $goods[goods_id])' />  
+                  <img src='".__IMG__."/".$goods[is_new].".gif' onclick='listTable.toggle(this, \"toggle_new\", $goods[goods_id])' />  
                 </td>
                 <td align='center'>
-                  <img src='".__IMG__."/".$goods[is_hot].".gif' onclick='listTable.toggle(this, 'toggle_hot', $goods[goods_id])' />  
+                  <img src='".__IMG__."/".$goods[is_hot].".gif' onclick='listTable.toggle(this, \"toggle_hot\", $goods[goods_id])' />  
                 </td>
                 <td align='center'>
-                  <span onclick='listTable.edit(this, 'edit_sort_order', $goods[goods_id])'>$goods[sort_order]</span>
+                  <span onclick='listTable.edit(this, \"edit_sort_order\", $goods[goods_id])'>$goods[sort_order]</span>
                 </td>
                 <td align='right'>
-                  <span onclick='listTable.edit(this, 'edit_goods_number', $goods[goods_id])'>$goods[goods_number]</span>
+                  <span onclick='listTable.edit(this, \"edit_goods_number\", $goods[goods_id])'>$goods[goods_number]</span>
                 </td>
                 <td align='center'>
                   <a href='../goods.php?id=$goods[goods_id]' target='_blank' title='查看'>
@@ -101,16 +102,16 @@ function goods_list($goods_list)
                   <a href='goods.php?act=copy&goods_id=$goods[goods_id]' title='复制'>
                     <img src='".__IMG__."/icon_copy.gif' width='16' height='16' border='0' />    
                   </a>
-                  <a href='javascript:;' onclick='listTable.remove($goods[goods_id], '$lang.trash_goods_confirm')' title='回收站'>
+                  <a href='javascript:;' onclick='listTable.remove($goods[goods_id], \"您确实要把该商品放入回收站吗？\" )' title='回收站'>
                     <img src='".__IMG__."/icon_trash.gif' width='16' height='16' border='0' />    
                   </a>
-                  <if condition='$goods.goods_type neq null'>
-                    <a href='goods.php?act=product_list&goods_id=$goods[goods_id]' title='$lang.item_list'>
+                  <!--<if condition='$goods.goods_type neq null'>
+                    <a href='goods.php?act=product_list&goods_id=$goods[goods_id]' title='货品列表'>
                       <img src='".__IMG__."/icon_docs.gif' width='16' height='16' border='0' />    
                     </a>
                    :     
                     <img src='".__IMG__."/empty.gif' width='16' height='16' border='0' />    
-                  </if>
+                  </if>-->
                 </td>
               </tr>       
         ";
@@ -161,7 +162,94 @@ function p($value){
   echo "</pre>";
 }
 
+function goods_recycle($goods_list){
+    is_array($goods_list) ? @extract($goods_list) : die(json_encode(array('error' => '您查找的数据为空')));
+    $str = "
+         <table cellpadding='3' cellspacing='1'>
+                                <tr>
+                                  <th>
+                                    <input onclick='listTable.selectAll(this, \"checkboxes\")' type='checkbox' />
+                                    <a href=javascript:listTable.sort('goods_id'); >编号</a>
+                                    <img src='".__IMG__."/sort_desc.gif'/>
+                                  </th>
+                                  <th>
+                                    <a href=javascript:listTable.sort('goods_name'); >商品名称</a>
+                                  </th>
+                                  <th>
+                                    <a href=javascript:listTable.sort('goods_sn'); >货号</a>
+                                  </th>
+                                  <th>
+                                    <a href=javascript:listTable.sort('shop_price'); >价格</a>
+                                  </th>
+                                  <th>操作</th>
+    ";
+    foreach ($goods_list as $goods) {
+        $goods[is_on_sale] = $goods[is_on_sale] ? 'yes' : 'no';
+        $goods[is_best] = $goods[is_best] ? 'yes' : 'no';
+        $goods[is_new] = $goods[is_new] ? 'yes' : 'no';
+        $goods[is_hot] = $goods[is_hot] ? 'yes' : 'no';
+        $is_promote_color = $goods['is_promote'] ? 'color:red' : '';
+        $str .= "
+            <tr>
+                <td>
+                  <input type='checkbox' name='checkboxes[]' value='$goods[goods_id]' />  
+                  $goods[goods_id]
+                </td>
+                <td class='first-cell' style='$is_promote_color'>
+                  <span onclick='listTable.edit(this, \"edit_goods_name\", $goods[goods_id])'>$goods[goods_name]</span>
+                </td>
+                <td>
+                  <span onclick='listTable.edit(this, \"edit_goods_sn\", $goods[goods_id])'>$goods[goods_sn]</span>
+                </td>
+                <td align='right'>
+                  <span onclick='listTable.edit(this, \"edit_goods_price\", $goods[goods_id])'>$goods[shop_price]</span>
+                </td>
+                 <td align='center'>
+                  <a href='javascript:;' onclick='listTable.remove($goods[goods_id], \"您确实要把该商品还原吗？\", \"restore_goods\")'>还原</a>
+                   |
+                  <a href='javascript:;' onclick='listTable.remove($goods[goods_id], \"您确实要删除该商品吗？\", \"drop_goods\")'>删除</a>
+                </td>
+              </tr>       
+        ";
+    }
 
+    $option_str = "";
+    for ($i=1; $i<$PAGECOUNT ; $i++)  {
+        $option_str .= "<option value='$i'>$i</option>";
+    }
+
+    $str .= "</table>
+        <!-- 分页 -->
+          <table id='page-table' cellspacing='0'>
+            <tr>
+              <td align='right' nowrap='true'>
+                <div id='turn-page'>
+                  总计
+                  <span id='totalRecords'>$COUNT</span>
+                  个记录分为
+                  <span id='totalPages'>$PAGECOUNT</span>
+                  页当前第
+                  <span id='pageCurrent'>$PAGE</span>
+                  页，每页
+                  <input type='text' size='3' id='pageSize' value='$PAGESIZE' onkeypress='return listTable.changePageSize(event)' />
+                  <span id='page-link'>
+                    <a href='javascript:listTable.gotoPageFirst()'>第一页</a>
+                    <a href='javascript:listTable.gotoPagePrev()'>上一页</a>
+                    <a href='javascript:listTable.gotoPageNext()'>下一页</a>
+                    <a href='javascript:listTable.gotoPageLast()'>最末页</a>
+                    <select id='gotoPage' onchange='listTable.gotoPage(this.value)'>".
+                      $option_str
+                    ."</select>
+                  </span>
+                </div>
+              </td>
+            </tr>
+          </table>
+
+
+    ";
+    return $str;
+}
 
 
 function GetCategoryTreeChild($spec_cat_id){
@@ -346,6 +434,6 @@ function ArrToStrIn($item_list){
           }
 }
 
-function teble(){
-  return C('DB_NAME').'.'.C('DB_PREFIX');
+function table($table){
+  return C('DB_NAME').'.'.C('DB_PREFIX').$table;
 }
