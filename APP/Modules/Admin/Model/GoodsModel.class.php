@@ -93,4 +93,91 @@
 			// die($sql);
 			return $date;
 		}
+
+		function goods_operation($var_arr, $is_insert = true){
+			array_map(addslashes, $var_arr);
+			extract($var_arr);
+			$code = empty($extension_code) ? '' : trim($extension_code);
+			$shop_price = !empty($shop_price) ? $shop_price : 0;
+		    $market_price = !empty($market_price) ? $market_price : 0;
+		    $promote_price = !empty($promote_price) ? floatval($promote_price ) : 0;
+		    $is_promote = empty($promote_price) ? 0 : 1;
+		    $promote_start_date = ($is_promote && !empty($promote_start_date)) ? local_strtotime($promote_start_date) : 0;
+		    $promote_end_date = ($is_promote && !empty($promote_end_date)) ? local_strtotime($promote_end_date) : 0;
+		    $goods_weight = !empty($goods_weight) ? $goods_weight * $weight_unit : 0;
+		    $is_best = isset($is_best) ? 1 : 0;
+		    $is_new = isset($is_new) ? 1 : 0;
+		    $is_hot = isset($is_hot) ? 1 : 0;
+		    $is_on_sale = isset($is_on_sale) ? 1 : 0;
+		    $is_alone_sale = isset($is_alone_sale) ? 1 : 0;
+		    $is_shipping = isset($is_shipping) ? 1 : 0;
+		    $goods_number = isset($goods_number) ? $goods_number : 0;
+		    $warn_number = isset($warn_number) ? $warn_number : 0;
+		    $goods_type = isset($goods_type) ? $goods_type : 0;
+		    $give_integral = isset($give_integral) ? intval($give_integral) : '-1';
+		    $rank_integral = isset($rank_integral) ? intval($rank_integral) : '-1';
+		    $suppliers_id = isset($suppliers_id) ? intval($suppliers_id) : '0';
+
+		    $goods_name_style = $goods_name_color . '+' . $goods_name_style;
+
+		    $catgory_id = empty($cat_id) ? '' : intval($cat_id);
+		    $brand_id = empty($brand_id) ? '' : intval($brand_id);
+
+		    $goods_thumb = (empty($goods_thumb) && !empty($goods_thumb_url) && goods_parse_url($goods_thumb_url)) ? htmlspecialchars(trim($goods_thumb_url)) : $goods_thumb;
+		    $goods_thumb = (empty($goods_thumb) && isset($auto_thumb))? $goods_img : $goods_thumb;
+
+		    if($is_insert){
+			    if ($code == '') {
+			    	$sql = "INSERT INTO " . table('goods') . " (goods_name, goods_name_style, goods_sn, " .
+			                    "cat_id, brand_id, shop_price, market_price, is_promote, promote_price, " .
+			                    "promote_start_date, promote_end_date, goods_img, goods_thumb, original_img, keywords, goods_brief, " .
+			                    "seller_note, goods_weight, goods_number, warn_number, integral, give_integral, is_best, is_new, is_hot, " .
+			                    "is_on_sale, is_alone_sale, is_shipping, goods_desc, add_time, last_update, goods_type, rank_integral, suppliers_id)" .
+		                	"VALUES ('$goods_name',' '$goods_name_style', '$goods_sn', '$catgory_id', " .
+			                    "'$brand_id', '$shop_price', '$market_price', '$is_promote','$promote_price', ".
+			                    "'$promote_start_date', '$promote_end_date', '$goods_img', '$goods_thumb', '$original_img', ".
+			                    "'$keywords',' '$goods_brief',' '$seller_note',' '$goods_weight', '$goods_number',".
+			                    " '$warn_number', '$integral',' '$give_integral', '$is_best', '$is_new', '$is_hot', '$is_on_sale', '$is_alone_sale', $is_shipping, ".
+			                    " '$goods_desc',' '" . gmtime() . "', '". gmtime() ."', '$goods_type', '$rank_integral', '$suppliers_id')";
+			    }else{
+			    	$sql = "INSERT INTO " . table('goods') . " (goods_name, goods_name_style, goods_sn, " .
+			                    "cat_id, brand_id, shop_price, market_price, is_promote, promote_price, " .
+			                    "promote_start_date, promote_end_date, goods_img, goods_thumb, original_img, keywords, goods_brief, " .
+			                    "seller_note, goods_weight, goods_number, warn_number, integral, give_integral, is_best, is_new, is_hot, is_real, " .
+			                    "is_on_sale, is_alone_sale, is_shipping, goods_desc, add_time, last_update, goods_type, extension_code, rank_integral)" .
+			                "VALUES ('$goods_name',' '$goods_name_style', '$goods_sn', '$catgory_id', " .
+			                    "'$brand_id', '$shop_price', '$market_price', '$is_promote','$promote_price', ".
+			                    "'$promote_start_date', '$promote_end_date', '$goods_img', '$goods_thumb', '$original_img', ".
+			                    "'$keywords',' '$goods_brief',' '$seller_note',' '$goods_weight', '$goods_number',".
+			                    " '$warn_number', '$integral',' '$give_integral', '$is_best', '$is_new', '$is_hot', 0, '$is_on_sale', '$is_alone_sale', $is_shipping, ".
+			                    " '$goods_desc',' '" . gmtime() . "', '". gmtime() ."', '$goods_type', '$code', '$rank_integral')";
+				}
+			}else{
+				$sql = "UPDATE " . table('goods') . " SET " .
+			                "goods_name = '$goods_name', " .
+			                "goods_name_style = '$goods_name_style', " .
+			                "goods_sn = '$goods_sn', " .
+			                "cat_id = '$catgory_id', " .
+			                "brand_id = '$brand_id', " .
+			                "shop_price = '$shop_price', " .
+			                "market_price = '$market_price', " .
+			                "is_promote = '$is_promote', " .
+			                "promote_price = '$promote_price', " .
+			                "promote_start_date = '$promote_start_date', " .
+			                "suppliers_id = '$suppliers_id', " .
+			                "promote_end_date = '$promote_end_date', ";
+			}
+		}
+
+
+
+
+
+
+
+
+
+
+
+
 	}

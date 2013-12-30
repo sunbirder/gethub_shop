@@ -1,5 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit();?><!-- $Id: goods_list.htm 17126 2010-04-23 10:30:26Z liuhui $ -->
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?php if (!defined('THINK_PATH')) exit();?>	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <title>ECSHOP 管理中心 - 商品列表</title>
@@ -64,7 +63,7 @@ var cancel_color = "无样式";
   </h1>
   <script type="text/javascript" src="__JS__/utils.js"></script>
   <script type="text/javascript" src="__JS__/listtable.js"></script>
-<script src="__JS__/utils.js" type="text/javascript"></script>
+	<script src="__JS__/utils.js" type="text/javascript"></script>
 <script src="__JS__/selectzone.js" type="text/javascript"></script>
 <script src="__JS__/colorselector.js" type="text/javascript"></script>
 <script src="__JS__/calendar/calendar.js" type="text/javascript"></script>
@@ -1098,7 +1097,9 @@ var cancel_color = "无样式";
   }
   
 </script>
- <div id="footer">
+
+
+	 <div id="footer">
   <!--       共执行 7 个查询，用时 0.011362 秒，Gzip 已禁用，内存占用 4.157 MB
         <br />-->
         版权所有 &copy; 2005-2010 上海商派网络科技有限公司，并保留所有权利。

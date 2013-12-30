@@ -155,13 +155,6 @@ function goods_list($goods_list)
     return $str;
 }
 
-
-function p($value){
-  echo "<pre>";
-    print_r($value);
-  echo "</pre>";
-}
-
 function goods_recycle($goods_list){
     is_array($goods_list) ? @extract($goods_list) : die(json_encode(array('error' => '您查找的数据为空')));
     $str = "
@@ -436,4 +429,11 @@ function ArrToStrIn($item_list){
 
 function table($table){
   return C('DB_NAME').'.'.C('DB_PREFIX').$table;
+}
+
+function gmtime(){
+  return time() - date('Z');
+}
+function time_to_date($time){
+  return date('Y-m-d H:i:s', $time+date('Z'));
 }

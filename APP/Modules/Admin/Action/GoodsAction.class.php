@@ -7,6 +7,7 @@
 
 		function __construct(){
 			parent::__construct();
+			$this->waitSecond = 9;
 		}
 
 			// VIEW.1.  商品列表
@@ -15,7 +16,7 @@
 			$page_size = 15;													// 页长
 			$field = 'goods_id, goods_name, goods_type, goods_sn, shop_price, is_on_sale, is_best, is_new, is_hot, is_promote, sort_order, goods_number, integral';
 			$where = 'is_delete=0 AND is_real=1';
-			$order = 'goods_id DESC ';
+			$order = 'goods_id ASC';
 			// $limit = '0,'.$page_size;
 			$goods_list = M($table)->field($field)->where($where)->order($order)->limit()->select();
 			// 普通方式获取数据
@@ -58,7 +59,10 @@
 				// 非ajax操作,页面跳转
 			}
 		}
-
+		/**
+		 * [goods_curd_json description]
+		 * @return [type]
+		 */
 		public function goods_curd_json(){
 			if(IS_POST){
 				$table = 'goods';
@@ -113,6 +117,10 @@
 				// 非ajax操作,页面跳转
 			}
 		}
+		/**
+		 * [goods_curd_bath description]p
+		 * @return [type]
+		 */
 		public function goods_curd_bath(){
 			/* 取得要操作的商品编号 */
 			$goods_id = !empty($_POST['checkboxes']) ? implode(',', $_POST['checkboxes']) : 0;
@@ -235,9 +243,58 @@
 		}
 
 			// VIEW.2.  商品添加
-		public function goods_insert_view(){
+		/**
+		 * [goods_insert_view description] 显示添加, 修改页面
+		 * @return [type] [description]
+		 */
+		public function goods_operation_view(){
 			$this->display();
 		}
+		public function goods_operation(){
+			IS_POST ? '' : $this->error('非法操作');
+			$is_insert = $_POST['goods_id'] ? true : false;
+			// 判断商品货号是否重复
+			$table = "goods_sn = $_POST[goods_sn] AND is_delete = 0 AND goods_id <> $_POST[goods_id]";
+			M('goods')->where($table)->count() > 0 ? $this->error('商品货号重复') : '';
+			// 图片上传检查
+			if(is_array($_FILES)){
+				foreach ($_FILES as $key => $value) {
+					switch ($key) {
+						case 'goods_img':
+							$value['error'] > 0 ? $this->error('商品图片上传失败, 请检查图片是否符合要求') : '';
+							break;
+						case 'goods_thumb':
+							$value['error'] > 0 ? $this->error('商品微缩图上传失败 请检查图片是否符合要求') : '';
+							break;
+						case 'img_url':
+							$value['error'] > 0 ? $this->error('商品相册图片上传失败 请检查图片是否符合要求') : '';
+							break;
+						default:
+							$boolean = FALSE;
+							break;
+					}
+				}
+				if ($boolean) {
+					import('ORG.Net.UploadFile');
+					$upload = new UploadFile();// 实例化上传类
+					$upload->maxSize  = 3145728 ;// 设置附件上传大小
+					$upload->allowExts  = array('jpg', 'gif', 'png', 'jpeg');// 设置附件上传类型
+					$upload->savePath =  './Public/Uploads/';// 设置附件上传目录
+					if(!$upload->upload()) {// 上传错误提示错误信息
+						$this->error($upload->getErrorMsg());
+					}else{// 上传成功 获取上传文件信息
+						$info =  $upload->getUploadFileInfo();
+					}
+				}
+			}
+
+			var_dump($_POST);			
+			// 插入/添加操作
+			
+			$goods_model = D('Goods');
+			// $goods_model->goods_operation($_POST, $is_inset);
+		}
+
 			// VIEW.3.  商品分类
 		public function goods_category_view(){
 			$this->display();
@@ -269,33 +326,6 @@
 			$this->assign('PAGECOUNT', ceil(count($goods_list)/$page_size));
 			$this->assign('goods_list', array_slice($goods_list, 0, $page_size));
 			$this->display();
-		}
-		public function goods_recycle_json(){
-			if(IS_POST){
-				// 显示列表, 排序操作, 分页操作, 页面跳转, 搜索操作
-				if (I('post.act')=='query') {
-					$sortname = I('post.sortname');
-					$sortorder = I('post.sortorder');
-					$page = I('post.page');
-					$page_size = I('post.page_size');
-        			$cat_id = I('post.cat_id');
-			        $brand_id = I('post.brand_id');
-			        $intro_type = I('post.intro_type');
-			        $suppliers_id = I('post.suppliers_id');
-			        $is_on_sale = I('post.is_on_sale');
-			        $keyword = I('post.keyword');
-			        $goods_model = D('Goods');
-					$goods_list = $goods_model->goods_list($sortname, $sortorder, $page, $page_size, $cat_id, $brand_id, $intro_type, $suppliers_id, $is_on_sale, $keyword);
-					$date['content'] = goods_recycle($goods_list);
-					$date['filter']	= array('sortname'=>$sortname, 'sortorder'=>$sortorder, 'page'=>$page, 'page_size'=>$page_size);
-					$date['page_count'] = $goods_list['PAGECOUNT'];
-					$date['sortname'] = $sortname;
-					$date['sortorder'] = $sortorder;
-					die(json_encode($date));
-				}
-			}else{
-				// 非ajax操作,页面跳转
-			}
 		}
 			// VIEW.7.  商品上下架
 		// public function goods_sale_view(){

@@ -700,3 +700,258 @@ ERR: 非法操作:index.php
 [ 2013-12-29T19:41:43+08:00 ] 127.0.0.1 /shop/index.php/Admin/Goods/index.php?is_ajax=1&act=check_order&1388317303273273
 ERR: 非法操作:index.php
 
+[ 2013-12-29T19:45:11+08:00 ] 127.0.0.1 /shop/index.php/Admin/Goods/index.php?is_ajax=1&act=check_order&1388317511627627
+ERR: 非法操作:index.php
+
+[ 2013-12-29T19:48:11+08:00 ] 127.0.0.1 /shop/index.php/Admin/Goods/index.php?is_ajax=1&act=check_order&1388317691623623
+ERR: 非法操作:index.php
+
+[ 2013-12-29T19:51:11+08:00 ] 127.0.0.1 /shop/index.php/Admin/Goods/index.php?is_ajax=1&act=check_order&1388317871623623
+ERR: 非法操作:index.php
+
+[ 2013-12-29T19:54:11+08:00 ] 127.0.0.1 /shop/index.php/Admin/Goods/index.php?is_ajax=1&act=check_order&1388318051623623
+ERR: 非法操作:index.php
+
+[ 2013-12-29T19:57:11+08:00 ] 127.0.0.1 /shop/index.php/Admin/Goods/index.php?is_ajax=1&act=check_order&1388318231623623
+ERR: 非法操作:index.php
+
+[ 2013-12-29T20:00:11+08:00 ] 127.0.0.1 /shop/index.php/Admin/Goods/index.php?is_ajax=1&act=check_order&1388318411623623
+ERR: 非法操作:index.php
+
+[ 2013-12-29T20:03:11+08:00 ] 127.0.0.1 /shop/index.php/Admin/Goods/index.php?is_ajax=1&act=check_order&1388318591625625
+ERR: 非法操作:index.php
+
+[ 2013-12-29T20:06:11+08:00 ] 127.0.0.1 /shop/index.php/Admin/Goods/index.php?is_ajax=1&act=check_order&1388318771605605
+ERR: 非法操作:index.php
+
+[ 2013-12-29T20:09:11+08:00 ] 127.0.0.1 /shop/index.php/Admin/Goods/index.php?is_ajax=1&act=check_order&1388318951601601
+ERR: 非法操作:index.php
+
+[ 2013-12-29T20:12:11+08:00 ] 127.0.0.1 /shop/index.php/Admin/Goods/index.php?is_ajax=1&act=check_order&1388319131604604
+ERR: 非法操作:index.php
+
+[ 2013-12-29T20:15:11+08:00 ] 127.0.0.1 /shop/index.php/Admin/Goods/index.php?is_ajax=1&act=check_order&1388319311601601
+ERR: 非法操作:index.php
+
+[ 2013-12-29T20:18:11+08:00 ] 127.0.0.1 /shop/index.php/Admin/Goods/index.php?is_ajax=1&act=check_order&1388319491601601
+ERR: 非法操作:index.php
+
+[ 2013-12-29T20:21:11+08:00 ] 127.0.0.1 /shop/index.php/Admin/Goods/index.php?is_ajax=1&act=check_order&1388319671601601
+ERR: 非法操作:index.php
+
+[ 2013-12-29T20:24:11+08:00 ] 127.0.0.1 /shop/index.php/Admin/Goods/index.php?is_ajax=1&act=check_order&1388319851601601
+ERR: 非法操作:index.php
+
+[ 2013-12-29T20:27:11+08:00 ] 127.0.0.1 /shop/index.php/Admin/Goods/index.php?is_ajax=1&act=check_order&1388320031601601
+ERR: 非法操作:index.php
+
+[ 2013-12-29T20:30:11+08:00 ] 127.0.0.1 /shop/index.php/Admin/Goods/index.php?is_ajax=1&act=check_order&1388320211600600
+ERR: 非法操作:index.php
+
+[ 2013-12-29T20:33:11+08:00 ] 127.0.0.1 /shop/index.php/Admin/Goods/index.php?is_ajax=1&act=check_order&1388320391600600
+ERR: 非法操作:index.php
+
+[ 2013-12-29T20:36:11+08:00 ] 127.0.0.1 /shop/index.php/Admin/Goods/index.php?is_ajax=1&act=check_order&1388320571600600
+ERR: 非法操作:index.php
+
+[ 2013-12-29T20:39:11+08:00 ] 127.0.0.1 /shop/index.php/Admin/Goods/index.php?is_ajax=1&act=check_order&1388320751601601
+ERR: 非法操作:index.php
+
+[ 2013-12-29T20:42:11+08:00 ] 127.0.0.1 /shop/index.php/Admin/Goods/index.php?is_ajax=1&act=check_order&1388320931600600
+ERR: 非法操作:index.php
+
+[ 2013-12-29T20:45:11+08:00 ] 127.0.0.1 /shop/index.php/Admin/Goods/index.php?is_ajax=1&act=check_order&1388321111600600
+ERR: 非法操作:index.php
+
+[ 2013-12-29T20:48:11+08:00 ] 127.0.0.1 /shop/index.php/Admin/Goods/index.php?is_ajax=1&act=check_order&1388321291602602
+ERR: 非法操作:index.php
+
+[ 2013-12-29T20:51:11+08:00 ] 127.0.0.1 /shop/index.php/Admin/Goods/index.php?is_ajax=1&act=check_order&1388321471600600
+ERR: 非法操作:index.php
+
+[ 2013-12-29T20:54:11+08:00 ] 127.0.0.1 /shop/index.php/Admin/Goods/index.php?is_ajax=1&act=check_order&1388321651599599
+ERR: 非法操作:index.php
+
+[ 2013-12-29T20:57:11+08:00 ] 127.0.0.1 /shop/index.php/Admin/Goods/index.php?is_ajax=1&act=check_order&1388321831600600
+ERR: 非法操作:index.php
+
+[ 2013-12-29T21:00:11+08:00 ] 127.0.0.1 /shop/index.php/Admin/Goods/index.php?is_ajax=1&act=check_order&1388322011600600
+ERR: 非法操作:index.php
+
+[ 2013-12-29T21:03:11+08:00 ] 127.0.0.1 /shop/index.php/Admin/Goods/index.php?is_ajax=1&act=check_order&1388322191585585
+ERR: 非法操作:index.php
+
+[ 2013-12-29T21:06:11+08:00 ] 127.0.0.1 /shop/index.php/Admin/Goods/index.php?is_ajax=1&act=check_order&1388322371585585
+ERR: 非法操作:index.php
+
+[ 2013-12-29T21:09:11+08:00 ] 127.0.0.1 /shop/index.php/Admin/Goods/index.php?is_ajax=1&act=check_order&1388322551585585
+ERR: 非法操作:index.php
+
+[ 2013-12-29T21:12:11+08:00 ] 127.0.0.1 /shop/index.php/Admin/Goods/index.php?is_ajax=1&act=check_order&1388322731585585
+ERR: 非法操作:index.php
+
+[ 2013-12-29T21:15:11+08:00 ] 127.0.0.1 /shop/index.php/Admin/Goods/index.php?is_ajax=1&act=check_order&1388322911585585
+ERR: 非法操作:index.php
+
+[ 2013-12-29T21:18:11+08:00 ] 127.0.0.1 /shop/index.php/Admin/Goods/index.php?is_ajax=1&act=check_order&1388323091584584
+ERR: 非法操作:index.php
+
+[ 2013-12-29T21:21:11+08:00 ] 127.0.0.1 /shop/index.php/Admin/Goods/index.php?is_ajax=1&act=check_order&1388323271584584
+ERR: 非法操作:index.php
+
+[ 2013-12-29T21:24:11+08:00 ] 127.0.0.1 /shop/index.php/Admin/Goods/index.php?is_ajax=1&act=check_order&1388323451586586
+ERR: 非法操作:index.php
+
+[ 2013-12-29T21:27:11+08:00 ] 127.0.0.1 /shop/index.php/Admin/Goods/index.php?is_ajax=1&act=check_order&1388323631595595
+ERR: 非法操作:index.php
+
+[ 2013-12-29T21:30:11+08:00 ] 127.0.0.1 /shop/index.php/Admin/Goods/index.php?is_ajax=1&act=check_order&1388323811592592
+ERR: 非法操作:index.php
+
+[ 2013-12-29T21:33:11+08:00 ] 127.0.0.1 /shop/index.php/Admin/Goods/index.php?is_ajax=1&act=check_order&1388323991598598
+ERR: 非法操作:index.php
+
+[ 2013-12-29T21:36:11+08:00 ] 127.0.0.1 /shop/index.php/Admin/Goods/index.php?is_ajax=1&act=check_order&1388324171588588
+ERR: 非法操作:index.php
+
+[ 2013-12-29T21:39:11+08:00 ] 127.0.0.1 /shop/index.php/Admin/Goods/index.php?is_ajax=1&act=check_order&1388324351594594
+ERR: 非法操作:index.php
+
+[ 2013-12-29T21:42:11+08:00 ] 127.0.0.1 /shop/index.php/Admin/Goods/index.php?is_ajax=1&act=check_order&1388324531592592
+ERR: 非法操作:index.php
+
+[ 2013-12-29T21:45:11+08:00 ] 127.0.0.1 /shop/index.php/Admin/Goods/index.php?is_ajax=1&act=check_order&1388324711592592
+ERR: 非法操作:index.php
+
+[ 2013-12-29T21:48:11+08:00 ] 127.0.0.1 /shop/index.php/Admin/Goods/index.php?is_ajax=1&act=check_order&1388324891594594
+ERR: 非法操作:index.php
+
+[ 2013-12-29T21:51:11+08:00 ] 127.0.0.1 /shop/index.php/Admin/Goods/index.php?is_ajax=1&act=check_order&1388325071594594
+ERR: 非法操作:index.php
+
+[ 2013-12-29T21:54:11+08:00 ] 127.0.0.1 /shop/index.php/Admin/Goods/index.php?is_ajax=1&act=check_order&1388325251599599
+ERR: 非法操作:index.php
+
+[ 2013-12-29T21:57:11+08:00 ] 127.0.0.1 /shop/index.php/Admin/Goods/index.php?is_ajax=1&act=check_order&1388325431577577
+ERR: 非法操作:index.php
+
+[ 2013-12-29T22:00:11+08:00 ] 127.0.0.1 /shop/index.php/Admin/Goods/index.php?is_ajax=1&act=check_order&1388325611579579
+ERR: 非法操作:index.php
+
+[ 2013-12-29T22:03:11+08:00 ] 127.0.0.1 /shop/index.php/Admin/Goods/index.php?is_ajax=1&act=check_order&1388325791578578
+ERR: 非法操作:index.php
+
+[ 2013-12-29T22:06:11+08:00 ] 127.0.0.1 /shop/index.php/Admin/Goods/index.php?is_ajax=1&act=check_order&1388325971576576
+ERR: 非法操作:index.php
+
+[ 2013-12-29T22:09:11+08:00 ] 127.0.0.1 /shop/index.php/Admin/Goods/index.php?is_ajax=1&act=check_order&1388326151578578
+ERR: 非法操作:index.php
+
+[ 2013-12-29T22:12:11+08:00 ] 127.0.0.1 /shop/index.php/Admin/Goods/index.php?is_ajax=1&act=check_order&1388326331579579
+ERR: 非法操作:index.php
+
+[ 2013-12-29T22:15:11+08:00 ] 127.0.0.1 /shop/index.php/Admin/Goods/index.php?is_ajax=1&act=check_order&1388326511579579
+ERR: 非法操作:index.php
+
+[ 2013-12-29T22:18:11+08:00 ] 127.0.0.1 /shop/index.php/Admin/Goods/index.php?is_ajax=1&act=check_order&1388326691580580
+ERR: 非法操作:index.php
+
+[ 2013-12-29T22:21:11+08:00 ] 127.0.0.1 /shop/index.php/Admin/Goods/index.php?is_ajax=1&act=check_order&1388326871572572
+ERR: 非法操作:index.php
+
+[ 2013-12-29T22:24:11+08:00 ] 127.0.0.1 /shop/index.php/Admin/Goods/index.php?is_ajax=1&act=check_order&1388327051576576
+ERR: 非法操作:index.php
+
+[ 2013-12-29T22:27:11+08:00 ] 127.0.0.1 /shop/index.php/Admin/Goods/index.php?is_ajax=1&act=check_order&1388327231579579
+ERR: 非法操作:index.php
+
+[ 2013-12-29T22:30:11+08:00 ] 127.0.0.1 /shop/index.php/Admin/Goods/index.php?is_ajax=1&act=check_order&1388327411579579
+ERR: 非法操作:index.php
+
+[ 2013-12-29T22:33:11+08:00 ] 127.0.0.1 /shop/index.php/Admin/Goods/index.php?is_ajax=1&act=check_order&1388327591578578
+ERR: 非法操作:index.php
+
+[ 2013-12-29T22:36:11+08:00 ] 127.0.0.1 /shop/index.php/Admin/Goods/index.php?is_ajax=1&act=check_order&1388327771574574
+ERR: 非法操作:index.php
+
+[ 2013-12-29T22:39:11+08:00 ] 127.0.0.1 /shop/index.php/Admin/Goods/index.php?is_ajax=1&act=check_order&1388327951576576
+ERR: 非法操作:index.php
+
+[ 2013-12-29T22:42:11+08:00 ] 127.0.0.1 /shop/index.php/Admin/Goods/index.php?is_ajax=1&act=check_order&1388328131579579
+ERR: 非法操作:index.php
+
+[ 2013-12-29T22:45:11+08:00 ] 127.0.0.1 /shop/index.php/Admin/Goods/index.php?is_ajax=1&act=check_order&1388328311576576
+ERR: 非法操作:index.php
+
+[ 2013-12-29T22:48:11+08:00 ] 127.0.0.1 /shop/index.php/Admin/Goods/index.php?is_ajax=1&act=check_order&1388328491561561
+ERR: 非法操作:index.php
+
+[ 2013-12-29T22:51:11+08:00 ] 127.0.0.1 /shop/index.php/Admin/Goods/index.php?is_ajax=1&act=check_order&1388328671559559
+ERR: 非法操作:index.php
+
+[ 2013-12-29T22:54:25+08:00 ] 127.0.0.1 /shop/index.php/Admin/Goods/index.php?is_ajax=1&act=check_order&1388328865596596
+ERR: 非法操作:index.php
+
+[ 2013-12-29T22:57:25+08:00 ] 127.0.0.1 /shop/index.php/Admin/Goods/index.php?is_ajax=1&act=check_order&1388329045596596
+ERR: 非法操作:index.php
+
+[ 2013-12-29T23:00:25+08:00 ] 127.0.0.1 /shop/index.php/Admin/Goods/index.php?is_ajax=1&act=check_order&1388329225593593
+ERR: 非法操作:index.php
+
+[ 2013-12-29T23:03:25+08:00 ] 127.0.0.1 /shop/index.php/Admin/Goods/index.php?is_ajax=1&act=check_order&1388329405595595
+ERR: 非法操作:index.php
+
+[ 2013-12-29T23:06:25+08:00 ] 127.0.0.1 /shop/index.php/Admin/Goods/index.php?is_ajax=1&act=check_order&1388329585590590
+ERR: 非法操作:index.php
+
+[ 2013-12-29T23:09:25+08:00 ] 127.0.0.1 /shop/index.php/Admin/Goods/index.php?is_ajax=1&act=check_order&1388329765588588
+ERR: 非法操作:index.php
+
+[ 2013-12-29T23:12:25+08:00 ] 127.0.0.1 /shop/index.php/Admin/Goods/index.php?is_ajax=1&act=check_order&1388329945588588
+ERR: 非法操作:index.php
+
+[ 2013-12-29T23:15:25+08:00 ] 127.0.0.1 /shop/index.php/Admin/Goods/index.php?is_ajax=1&act=check_order&1388330125588588
+ERR: 非法操作:index.php
+
+[ 2013-12-29T23:18:25+08:00 ] 127.0.0.1 /shop/index.php/Admin/Goods/index.php?is_ajax=1&act=check_order&1388330305588588
+ERR: 非法操作:index.php
+
+[ 2013-12-29T23:21:26+08:00 ] 127.0.0.1 /shop/index.php/Admin/Goods/index.php?is_ajax=1&act=check_order&1388330485971971
+ERR: 非法操作:index.php
+
+[ 2013-12-29T23:24:25+08:00 ] 127.0.0.1 /shop/index.php/Admin/Goods/index.php?is_ajax=1&act=check_order&1388330665589589
+ERR: 非法操作:index.php
+
+[ 2013-12-29T23:27:25+08:00 ] 127.0.0.1 /shop/index.php/Admin/Goods/index.php?is_ajax=1&act=check_order&1388330845589589
+ERR: 非法操作:index.php
+
+[ 2013-12-29T23:30:25+08:00 ] 127.0.0.1 /shop/index.php/Admin/Goods/index.php?is_ajax=1&act=check_order&1388331025589589
+ERR: 非法操作:index.php
+
+[ 2013-12-29T23:33:25+08:00 ] 127.0.0.1 /shop/index.php/Admin/Goods/index.php?is_ajax=1&act=check_order&1388331205573573
+ERR: 非法操作:index.php
+
+[ 2013-12-29T23:36:25+08:00 ] 127.0.0.1 /shop/index.php/Admin/Goods/index.php?is_ajax=1&act=check_order&1388331385573573
+ERR: 非法操作:index.php
+
+[ 2013-12-29T23:39:25+08:00 ] 127.0.0.1 /shop/index.php/Admin/Goods/index.php?is_ajax=1&act=check_order&1388331565574574
+ERR: 非法操作:index.php
+
+[ 2013-12-29T23:42:25+08:00 ] 127.0.0.1 /shop/index.php/Admin/Goods/index.php?is_ajax=1&act=check_order&1388331745573573
+ERR: 非法操作:index.php
+
+[ 2013-12-29T23:45:25+08:00 ] 127.0.0.1 /shop/index.php/Admin/Goods/index.php?is_ajax=1&act=check_order&1388331925573573
+ERR: 非法操作:index.php
+
+[ 2013-12-29T23:48:25+08:00 ] 127.0.0.1 /shop/index.php/Admin/Goods/index.php?is_ajax=1&act=check_order&1388332105573573
+ERR: 非法操作:index.php
+
+[ 2013-12-29T23:51:25+08:00 ] 127.0.0.1 /shop/index.php/Admin/Goods/index.php?is_ajax=1&act=check_order&1388332285573573
+ERR: 非法操作:index.php
+
+[ 2013-12-29T23:54:25+08:00 ] 127.0.0.1 /shop/index.php/Admin/Goods/index.php?is_ajax=1&act=check_order&1388332465573573
+ERR: 非法操作:index.php
+
+[ 2013-12-29T23:57:25+08:00 ] 127.0.0.1 /shop/index.php/Admin/Goods/index.php?is_ajax=1&act=check_order&1388332645574574
+ERR: 非法操作:index.php
+

@@ -221,54 +221,56 @@ var cancel_color = "无样式";
         </div>
 
         <div>
-          <input type="hidden" name="act" value="batch" />
-          <select name="type" id="selAction" onchange="changeAction()">
-            <option value="">请选择...</option>
-            <option value="trash">回收站</option>
-            <option value="on_sale">上架</option>
-            <option value="not_on_sale">下架</option>
-            <option value="best">精品</option>
-            <option value="not_best">取消精品</option>
-            <option value="new">新品</option>
-            <option value="not_new">取消新品</option>
-            <option value="hot">热销</option>
-            <option value="not_hot">取消热销</option>
-            <option value="move_to">转移到分类</option>
-            <option value="suppliers_move_to">转移到供货商</option>
-
-          </select>
-          <select name="target_cat" style="display:none">
-            <option value="0">请选择...</option>
-            <option value="6" >手机配件</option>
-            <option value="9" >&nbsp;&nbsp;&nbsp;&nbsp;电池</option>
-            <option value="11" >&nbsp;&nbsp;&nbsp;&nbsp;读卡器和内存卡</option>
-            <option value="7" >&nbsp;&nbsp;&nbsp;&nbsp;充电器</option>
-            <option value="8" >&nbsp;&nbsp;&nbsp;&nbsp;耳机</option>
-            <option value="1" >手机类型</option>
-            <option value="3" >&nbsp;&nbsp;&nbsp;&nbsp;GSM手机</option>
-            <option value="4" >&nbsp;&nbsp;&nbsp;&nbsp;3G手机</option>
-            <option value="5" >&nbsp;&nbsp;&nbsp;&nbsp;双模手机</option>
-            <option value="2" >&nbsp;&nbsp;&nbsp;&nbsp;CDMA手机</option>
-            <option value="12" >充值卡</option>
-            <option value="13" >&nbsp;&nbsp;&nbsp;&nbsp;小灵通/固话充值卡</option>
-            <option value="14" >&nbsp;&nbsp;&nbsp;&nbsp;移动手机充值卡</option>
-            <option value="15" >&nbsp;&nbsp;&nbsp;&nbsp;联通手机充值卡</option>
-          </select>
-          <!--二级主菜单：转移供货商-->
-         <select name="suppliers_id" style="display:none">
-            <option value="-1">请选择...</option>
-            <option value="0">转移到网店</option>
-            <option value="1">北京供货商</option>
-            <option value="2">上海供货商</option>
-          </select>
-          <!--end!-->
-
-          <input type="hidden" name="extension_code" value="" />
-          <input type="submit" value=" 确定 " id="btnSubmit" name="btnSubmit" class="button" disabled="true" />
+         <input type="hidden" name="act" value="batch" />
+      <select name="type" id="selAction" onchange="changeAction()">
+        <option value="">请选择...</option>
+        <option value="restore">还原</option>
+        <option value="drop">移除</option>
+      </select>
+      <select name="target_cat" style="display:none" onchange="checkIsLeaf(this)"><option value="0">请选择...</caption><option value="17" >asdsa</option><option value="1" >手机类型</option><option value="3" >&nbsp;&nbsp;&nbsp;&nbsp;GSM手机</option><option value="4" >&nbsp;&nbsp;&nbsp;&nbsp;3G手机</option><option value="5" >&nbsp;&nbsp;&nbsp;&nbsp;双模手机</option><option value="2" >&nbsp;&nbsp;&nbsp;&nbsp;CDMA手机</option><option value="16" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;法国色粉</option><option value="18" >dasdsad</option><option value="12" >充值卡</option><option value="14" >&nbsp;&nbsp;&nbsp;&nbsp;移动手机充值卡</option><option value="15" >&nbsp;&nbsp;&nbsp;&nbsp;联通手机充值卡</option><option value="13" >&nbsp;&nbsp;&nbsp;&nbsp;小灵通/固话充值卡</option><option value="6" >手机配件</option><option value="11" >&nbsp;&nbsp;&nbsp;&nbsp;读卡器和内存卡</option><option value="7" >&nbsp;&nbsp;&nbsp;&nbsp;充电器</option><option value="8" >&nbsp;&nbsp;&nbsp;&nbsp;耳机</option><option value="9" >&nbsp;&nbsp;&nbsp;&nbsp;电池</option></select>
+      <input type="submit" value=" 确定 " id="btnSubmit" name="btnSubmit" class="button" disabled="true" />
         </div>
       </form>
 
       <script type="text/javascript">
+// 这里把JS用到的所有语言都赋值到这里
+var process_request = "正在处理您的请求...";
+var todolist_caption = "记事本";
+var todolist_autosave = "自动保存";
+var todolist_save = "保存";
+var todolist_clear = "清除";
+var todolist_confirm_save = "是否将更改保存到记事本？";
+var todolist_confirm_clear = "是否清空内容？";
+var goods_name_not_null = "商品名称不能为空。";
+var goods_cat_not_null = "商品分类必须选择。";
+var category_cat_not_null = "分类名称不能为空";
+var brand_cat_not_null = "品牌名称不能为空";
+var goods_cat_not_leaf = "您选择的商品分类不是底级分类，请选择底级分类。";
+var shop_price_not_null = "本店售价不能为空。";
+var shop_price_not_number = "本店售价不是数值。";
+var select_please = "请选择...";
+var button_add = "添加";
+var button_del = "删除";
+var spec_value_not_null = "规格不能为空";
+var spec_price_not_number = "加价不是数字";
+var market_price_not_number = "市场价格不是数字";
+var goods_number_not_int = "商品库存不是整数";
+var warn_number_not_int = "库存警告不是整数";
+var promote_not_lt = "促销开始日期不能大于结束日期";
+var promote_start_not_null = "促销开始时间不能为空";
+var promote_end_not_null = "促销结束时间不能为空";
+var drop_img_confirm = "您确实要删除该图片吗？";
+var batch_no_on_sale = "您确实要将选定的商品下架吗？";
+var batch_trash_confirm = "您确实要把选中的商品放入回收站吗？";
+var go_category_page = "本页数据将丢失，确认要去商品分类页添加分类吗？";
+var go_brand_page = "本页数据将丢失，确认要去商品品牌页添加品牌吗？";
+var volume_num_not_null = "请输入优惠数量";
+var volume_num_not_number = "优惠数量不是数字";
+var volume_price_not_null = "请输入优惠价格";
+var volume_price_not_number = "优惠价格不是数字";
+var cancel_color = "无样式";
+
+
     // listTable属性初始化
     // listTable.recordCount = 24;// <?php echo ($COUNT); ?>
     // listTable.filter.cat_id = '0';
@@ -302,49 +304,41 @@ var cancel_color = "无样式";
     document.forms['listForm'].reset();
   }
 
-  /**
-   * 批量处理操作
-   * @param: bool ext 其他条件：用于转移分类
-   */
   function confirmSubmit(frm, ext)
   {
-      if (frm.elements['type'].value == 'trash')
-      {
-          return confirm(batch_trash_confirm);
-      }
-      else if (frm.elements['type'].value == 'not_on_sale')
-      {
-          return confirm(batch_no_on_sale);
-      }
-      else if (frm.elements['type'].value == 'move_to')
-      {
-          ext = (ext == undefined) ? true : ext;
-          return ext && frm.elements['target_cat'].value != 0;
-      }
-      else if (frm.elements['type'].value == '')
-      {
-          return false;
-      }
-      else
-      {
-          return true;
-      }
+    if (frm.elements['type'].value == 'restore')
+    {
+      
+      return confirm("您确实要把该商品还原吗？");
+      
+    }
+    else if (frm.elements['type'].value == 'drop')
+    {
+      
+      return confirm("彻底删除商品将删除与该商品有关的所有信息。\n您确实要删除选中的商品吗？");
+      
+    }
+    else if (frm.elements['type'].value == '')
+    {
+        return false;
+    }
+    else
+    {
+        return true;
+    }
   }
 
   function changeAction()
   {
       var frm = document.forms['listForm'];
 
-      // 切换分类列表的显示
-      frm.elements['target_cat'].style.display = frm.elements['type'].value == 'move_to' ? '' : 'none';
-      
-      frm.elements['suppliers_id'].style.display = frm.elements['type'].value == 'suppliers_move_to' ? '' : 'none';
-      
-      if (!document.getElementById('btnSubmit').disabled && confirmSubmit(frm, false))
+      if (!document.getElementById('btnSubmit').disabled &&
+          confirmSubmit(frm, false))
       {
           frm.submit();
       }
   }
+  
 
 </script>
  
