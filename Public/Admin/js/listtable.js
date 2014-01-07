@@ -1,19 +1,3 @@
-
-  /* *
-  * 调用此方法发送HTTP请求。
-  *
-  * @public
-  * @param   {string}    url             请求的URL地址
-  * @param   {mix}       params          发送参数
-  * @param   {Function}  callback        回调函数
-  * @param   {string}    ransferMode     请求的方式，有"GET"和"POST"两种
-  * @param   {string}    responseType    响应类型，有"JSON"、"XML"和"TEXT"三种
-  * @param   {boolean}   asyn            是否异步请求的方式
-  * @param   {boolean}   quiet           是否安静模式请求
-  * run : function (url, params, callback, transferMode, responseType, asyn, quiet)
-  */
-  
-
 /* $Id: listtable.js 14980 2008-10-22 05:01:19Z testyang $ */
 if (typeof Ajax != 'object')
 {
@@ -29,11 +13,9 @@ var listTable = new Object;
 
 listTable.query = "query";
 listTable.filter = new Object;
-// listTable.url = location.href.lastIndexOf("?") == -1 ? location.href.substring((location.href.lastIndexOf("/")) + 1) : location.href.substring((location.href.lastIndexOf("/")) + 1, location.href.lastIndexOf("?"));
-// listTable.url = location.href.substring(0, (location.href.lastIndexOf("/")) + 1);
-// listTable.url += 'goods_curd_json';
-listTable.url = 'goods_curd_json';
-var url = 'goods_list_json';
+listTable.url = location.href.lastIndexOf("?") == -1 ? location.href.substring((location.href.lastIndexOf("/")) + 1) : location.href.substring((location.href.lastIndexOf("/")) + 1, location.href.lastIndexOf("?"));
+listTable.url += "?is_ajax=1";
+
 /**
  * 创建一个可编辑区
  */
@@ -110,7 +92,6 @@ listTable.edit = function(obj, act, id)
  */
 listTable.toggle = function(obj, act, id)
 {
-	// var img_url = "123";
   var val = (obj.src.match(/yes.gif/i)) ? 0 : 1;
 
   var res = Ajax.call(this.url, "act="+act+"&val=" + val + "&id=" +id, null, "POST", "JSON", false);
@@ -122,31 +103,30 @@ listTable.toggle = function(obj, act, id)
 
   if (res.error == 0)
   {
-    obj.src = (res.content > 0) ? img_url+'/yes.gif' : img_url+'/no.gif';
+    obj.src = (res.content > 0) ? 'images/yes.gif' : 'images/no.gif';
   }
 }
 
 /**
  * 切换排序方式
  */
-listTable.sort = function(sortname, sortorder)
+listTable.sort = function(sort_by, sort_order)
 {
-  var args = "act="+this.query+"&sortname="+sortname+"&sortorder=";
-  args += this.filter.sortorder == "DESC" ? "ASC" : "DESC";
-/*
-  if (this.filter.sortname == sortname)
+  var args = "act="+this.query+"&sort_by="+sort_by+"&sort_order=";
+
+  if (this.filter.sort_by == sort_by)
   {
-    args += this.filter.sortorder == "DESC" ? "ASC" : "DESC";
+    args += this.filter.sort_order == "DESC" ? "ASC" : "DESC";
   }
   else
   {
     args += "DESC";
   }
-*/
+
   for (var i in this.filter)
   {
     if (typeof(this.filter[i]) != "function" &&
-      i != "sortorder" && i != "sortname" && !Utils.isEmpty(this.filter[i]))
+      i != "sort_order" && i != "sort_by" && !Utils.isEmpty(this.filter[i]))
     {
       args += "&" + i + "=" + this.filter[i];
     }
@@ -154,7 +134,7 @@ listTable.sort = function(sortname, sortorder)
 
   this.filter['page_size'] = this.getPageSize();
 
-  Ajax.call(url, args, this.listCallback, "POST", "JSON");
+  Ajax.call(this.url, args, this.listCallback, "POST", "JSON");
 }
 
 /**
@@ -163,7 +143,7 @@ listTable.sort = function(sortname, sortorder)
 listTable.gotoPage = function(page)
 {
   if (page != null) this.filter['page'] = page;
-	
+
   if (this.filter['page'] > this.pageCount) this.filter['page'] = 1;
 
   this.filter['page_size'] = this.getPageSize();
@@ -178,7 +158,7 @@ listTable.loadList = function()
 {
   var args = "act="+this.query+"" + this.compileFilter();
 
-  Ajax.call(url, args, this.listCallback, "POST", "JSON");
+  Ajax.call(this.url, args, this.listCallback, "POST", "JSON");
 }
 
 /**
@@ -198,7 +178,7 @@ listTable.remove = function(id, cfm, opt)
     Ajax.call(this.url, args, this.listCallback, "GET", "JSON");
   }
 }
-// 第一页
+
 listTable.gotoPageFirst = function()
 {
   if (this.filter.page > 1)
@@ -206,7 +186,7 @@ listTable.gotoPageFirst = function()
     listTable.gotoPage(1);
   }
 }
-// 上一页
+
 listTable.gotoPagePrev = function()
 {
   if (this.filter.page > 1)
@@ -214,16 +194,15 @@ listTable.gotoPagePrev = function()
     listTable.gotoPage(this.filter.page - 1);
   }
 }
-// 下一页
+
 listTable.gotoPageNext = function()
 {
- 
   if (this.filter.page < listTable.pageCount)
   {
     listTable.gotoPage(parseInt(this.filter.page) + 1);
   }
 }
-// 最后一页
+
 listTable.gotoPageLast = function()
 {
   if (this.filter.page < listTable.pageCount)
@@ -231,7 +210,7 @@ listTable.gotoPageLast = function()
     listTable.gotoPage(listTable.pageCount);
   }
 }
-// 改变分页数量
+
 listTable.changePageSize = function(e)
 {
     var evt = Utils.fixEvent(e);
@@ -241,7 +220,7 @@ listTable.changePageSize = function(e)
         return false;
     };
 }
-// 用于ajax的回调函数
+
 listTable.listCallback = function(result, txt)
 {
   if (result.error > 0)
@@ -252,11 +231,11 @@ listTable.listCallback = function(result, txt)
   {
     try
     {
-      document.getElementById('listDiv').innerHTML = typeof result.content !== 'undefined' ? result.content : result.error;
-	
+      document.getElementById('listDiv').innerHTML = result.content;
+
       if (typeof result.filter == "object")
       {
-        listTable.filter = result.filter;	// listTable.filter修改属性值
+        listTable.filter = result.filter;
       }
 
       listTable.pageCount = result.page_count;
@@ -267,7 +246,7 @@ listTable.listCallback = function(result, txt)
     }
   }
 }
-// 复选框全选功能
+
 listTable.selectAll = function(obj, chk)
 {
   if (chk == null)
@@ -291,9 +270,8 @@ listTable.compileFilter = function()
   var args = '';
   for (var i in this.filter)
   {
-    // if (typeof(this.filter[i]) != "function" && typeof(this.filter[i]) != "undefined")
-    if (typeof(this.filter[i]) != "function" && !Utils.isEmpty(this.filter[i]))
-	{
+    if (typeof(this.filter[i]) != "function" && typeof(this.filter[i]) != "undefined")
+    {
       args += "&" + i + "=" + encodeURIComponent(this.filter[i]);
     }
   }
@@ -303,7 +281,6 @@ listTable.compileFilter = function()
 
 listTable.getPageSize = function()
 {
- /*
   var ps = 15;
 
   pageSize = document.getElementById("pageSize");
@@ -313,9 +290,6 @@ listTable.getPageSize = function()
     ps = Utils.isInt(pageSize.value) ? pageSize.value : 15;
     document.cookie = "ECSCP[page_size]=" + ps + ";";
   }
- */
- var ps = document.getElementById("pageSize").value;
- return ps ? ps : 15;
 }
 
 listTable.addRow = function(checkFunc)

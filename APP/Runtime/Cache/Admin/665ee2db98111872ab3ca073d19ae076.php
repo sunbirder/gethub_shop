@@ -164,7 +164,7 @@ body {
       </li>
   <li class="explode" key="04_order" name="menu">
     订单管理        <ul>
-          <li class="menu-item"><a href="http://localhost/ecshop/admin/order.php?act=list" target="main-frame">订单列表</a></li>
+          <li class="menu-item"><a href="<?php echo U(GROUP_NAME.'/Order/order_list');?>" target="main-frame">订单列表</a></li>
           <li class="menu-item"><a href="http://localhost/ecshop/admin/order.php?act=order_query" target="main-frame">订单查询</a></li>
           <li class="menu-item"><a href="http://localhost/ecshop/admin/order.php?act=merge" target="main-frame">合并订单</a></li>
           <li class="menu-item"><a href="http://localhost/ecshop/admin/order.php?act=templates" target="main-frame">订单打印</a></li>
@@ -204,7 +204,7 @@ body {
       </li>
   <li class="explode" key="08_members" name="menu">
     会员管理        <ul>
-          <li class="menu-item"><a href="http://localhost/ecshop/admin/users.php?act=list" target="main-frame">会员列表</a></li>
+          <li class="menu-item"><a href="<?php echo U(GROUP_NAME.'/User/user_list');?>" target="main-frame">会员列表</a></li>
           <li class="menu-item"><a href="http://localhost/ecshop/admin/users.php?act=add" target="main-frame">添加会员</a></li>
           <li class="menu-item"><a href="http://localhost/ecshop/admin/user_rank.php?act=list" target="main-frame">会员等级</a></li>
           <li class="menu-item"><a href="http://localhost/ecshop/admin/integrate.php?act=list" target="main-frame">会员整合</a></li>
