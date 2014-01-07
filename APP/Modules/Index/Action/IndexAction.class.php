@@ -3,7 +3,6 @@
 	class IndexAction extends Action{
 
 		public function index(){
-
 			$this->assign('cat_hd_display',true);
 			$this->display('', $date);
 		}

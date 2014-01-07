@@ -1,7 +1,3 @@
-/**
- *	工具对象
-*/
-
 /* $Id : utils.js 5052 2007-02-03 10:30:13Z weberliu $ */
 
 var Browser = new Object();
@@ -142,7 +138,7 @@ function rowindex(tr)
     }
   }
 }
-// cookie相关函数
+
 document.getCookie = function(sName)
 {
   // cookies are separated by semicolons
@@ -174,7 +170,7 @@ document.removeCookie = function(sName,sValue)
 {
   document.cookie = sName + "=; expires=Fri, 31 Dec 1999 23:59:59 GMT;";
 }
-// 获取元素位置
+
 function getPosition(o)
 {
     var t = o.offsetTop;
@@ -187,7 +183,7 @@ function getPosition(o)
     var pos = {top:t,left:l};
     return pos;
 }
-// 清除本节点的空白
+
 function cleanWhitespace(element)
 {
   var element = element;

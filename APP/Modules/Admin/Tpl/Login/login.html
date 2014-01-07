@@ -1,0 +1,100 @@
+{__NOLAYOUT__}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script  type="text/javascript" src="__JS__/jquery-1.5.1.min.js"></script>
+<link href="__CSS__/login.css" rel="stylesheet" type="text/css" />
+<script>
+  $(function(){
+    var result=1;
+    $("#login_button").click(function(){
+    var username=$("#username").val(); 
+    var password=$("#password").val();
+    var capital=$("#capital").val();
+      if(username==''){
+         $("#username").addClass('border_line');
+         $("#username").parent().next().children("span").css({"display":"inline-block"});
+         result=0;
+      }
+       if(password==''){
+         $("#password").addClass('border_line');
+         $("#password").parent().next().children("span").css({"display":"inline-block"});
+         result=0;
+      }
+      if(capital==''){
+        $("#capital").addClass('border_line');
+        $("#capital").parent().next().children("span").css({"display":"inline-block"})
+        result=0;
+      }
+      // ajax用户名密码提交
+      // $.post("{:U(GROUP_NAME.'Login/check_Login')}",{name:username,pwd:password},function(msg){
+          
+      // })
+      //ajax验证码提交
+      $.post("{:U(GROUP_NAME.'/Login/chk_code')}",{code:capital},function(msg){
+          if(msg==1){
+            $("#capital").removeClass('border_line');
+            $("#capital").parent().next().children("span").css({"display":"none"});
+            if(result==1){
+              $("#admin_login").submit();
+            }   
+          }else{
+            $("#capital").addClass('border_line');
+            $("#capital").parent().next().children("span").css({"display":"inline-block"})
+          }
+      })
+
+    });
+    $("#username,#password,#capital").focus(function(){
+       $(this).removeClass('border_line');
+      $(this).parent().next().children("span").css({"display":"none"});
+    })
+       
+    
+  })
+</script>
+<script language="JavaScript">
+
+</script>
+</head>
+<body style="background: #278296">
+<form method="post" action="{:U(GROUP_NAME.'/Login/check_Login')}" name='theForm' id="admin_login" >
+  <table cellspacing="0" cellpadding="0" style="margin-top: 200px" align="center">
+  <tr>
+    <td><img src="__IMG__/login.png" width="178" height="256" border="0"  /></td>
+    <td style="padding-left: 50px">
+      <table id="admin_login_son">
+      
+      <tr>
+        <td class="first_td">用户名：</td>
+        <td><input type="text" name="username" id="username"/></td>
+        <td><span>请填写用户名</span></td>
+      </tr>
+      <tr>
+        <td  class="first_td">密　码：</td>
+        <td><input type="password" name="password" id="password"/></td>
+        <td><span>请填写用户</span></td>
+      </tr>
+      <tr>
+        <td  class="first_td">验证码：</td>
+        <td><input type="text" name="captcha" class="capital" id="capital"/></td>
+        <td><span>验证码错误</span></td>
+      </tr>
+      <tr>
+      <td  class="first_td"></td><td colspan="2" align="right" id="code"><img src="{:U(GROUP_NAME.'/Login/check')}" width="145" height="20"  border="1" onclick= 'this.src=this.src+"?"+Math.random()' style="cursor: pointer;" />
+      </td>
+      <td></td>
+      <tr><td>&nbsp;</td><td><input type="button" value="进入管理中心" id="login_button" /></td></tr>
+      <tr>
+        <td  class="first_td"></td>
+        <td colspan="2" align="left">&raquo; <a href="" style="color:white">返回首页</a> &raquo; <a href="" style="color:white">你忘记了密码吗？</a></td>
+      </tr>
+      </table>
+    </td>
+  </tr>
+  </table>
+  <input type="hidden" name="act" value="signin" />
+</form>
+</body>
