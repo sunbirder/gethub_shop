@@ -7,8 +7,9 @@
 			 '__CSS__'	=>	__ROOT__.'/Public/'.GROUP_NAME.'/css',
 			 '__JS__'	=>	__ROOT__.'/Public/'.GROUP_NAME.'/js',
 			 '__IMG__'	=>	__ROOT__.'/Public/'.GROUP_NAME.'/images',
+			 '__UPLOAD__'	=>	reset(explode('index', __APP__)).'Upload/',
 
-			 '__GOODSURL__'	=>	__ROOT__.'/'.'index.php'.'/'.GROUP_NAME.'/Goods',
+			 '__GOODSURL__'	=>	__GROUP__.'/Goods',
 			),
 		);
 
