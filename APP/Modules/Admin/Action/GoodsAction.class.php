@@ -31,7 +31,11 @@
 			$this->assign('COUNT', count($goods_list));
 			$this->assign('PAGECOUNT', ceil(count($goods_list)/$page_size));
 			$this->assign('goods_list', array_slice($goods_list, 0, $page_size));
-			$this->display('goods_list_view');
+
+			$this->assign('page_name', '商品列表');
+			$this->assign('button_name', '添加商品');
+			$this->assign('button_url', 'goods_operation_view');
+			$this->display();
 		}
 		/**
 		 * 商品分页 ajax
@@ -272,9 +276,9 @@
 	        $goods = M('goods')->where("goods_id = '$goods_id'")->find();
 	        $goods['promote_start_date'] = date('Y-m-d', $goods['promote_start_date']);
 	        $goods['promote_end_date'] = date('Y-m-d', $goods['promote_end_date']);
-	        dump($goods);
+	        // dump($goods);
 	        $this->assign('goods', $goods);
-	        echo M()->getLastSql();
+	        // echo M()->getLastSql();
 	        vendor("FCKeditor.fckeditor");
 		    $editor = new FCKeditor('goods_desc');
 		    $editor->BasePath   = reset(explode('index', __APP__)).'ThinkPHP/Extend/Vendor/fckeditor/';
@@ -458,7 +462,7 @@
 			        // 	$img_list[$key]['thumb_url'] = $this->upload.$value['thumb_url'];
 			        // 	$img_list[$key]['img_original'] = $this->upload.$value['img_original'];
 			        // }
-			        dump($img_list);//exit;
+			        // dump($img_list);
 			    //     /* 格式化相册图片路径 */
 			    //     if (isset($GLOBALS['shop_id']) && ($GLOBALS['shop_id'] > 0))
 			    //     {
@@ -490,7 +494,7 @@
 			    // $this->assign('goods', $goods);
 			    // $this->assign('goods_name_color', $goods_name_style[0]);
 			    // $this->assign('goods_name_style', $goods_name_style[1]);
-			    dump(get_brand_list());
+			    // dump(get_brand_list());
 			    $this->assign('cat_list', cat_list(0, $goods['cat_id']));
 			    $this->assign('brand_list', get_brand_list());
 			    // $this->assign('unit_list', get_unit_list());
@@ -525,6 +529,9 @@
 			    //     $volume_price_list = array('0'=>array('number'=>'','price'=>''));
 			    // }
 			    // $this->assign('volume_price_list', $volume_price_list);
+			$this->assign('page_name', '添加商品');
+			$this->assign('button_name', '商品列表');
+			$this->assign('button_url', 'goods_list_view');
 			$this->display();
 		}
 		/**
@@ -651,9 +658,12 @@
 		    $this->assign('full_page',    1);
 
 		    $this->assign('cat_info',     $cat_list);
-		    dump($cat_list);
+		    // dump($cat_list);
 		    /* 列表页面 */
 		    // assign_query_info();
+		    $this->assign('page_name', '商品分类');
+			$this->assign('button_name', '添加分类');
+			$this->assign('button_url', 'goods_category_edit_view');
 			$this->display();
 		}
 		/**
@@ -714,13 +724,16 @@
 				// 分类列表
 				$this->assign('category', $category);
 				$this->assign('update', 1);
-				dump($category);
+				// dump($category);
 			}
+			$this->assign('page_name', '添加分类');
+			$this->assign('button_name', '商品分类');
+			$this->assign('button_url', 'goods_category_view');
 			$this->display();
 		}
 		public function goods_category_edit()
 		{
-			dump($_POST);
+			// dump($_POST);
 			IS_POST || isset($_GET['act']) ? '' : $this->error('非法操作');
 			$category = M('category');
 			if (!empty($_POST['act']) && $_POST['act'] == 'insert') {
@@ -757,7 +770,7 @@
 		 */
 		public function goods_brand_view()
 		{
-			dump($_POST);
+			// dump($_POST);
 			$where = !empty($_POST['search_brand_name']) ? "brand_name like '%".I('post.search_brand_name')."%'" : '';
 			$Brand = M('Brand'); // 实例化Brand对象
 			import('ORG.Util.Page');// 导入分页类
@@ -767,11 +780,15 @@
 			// !empty($_POST['search_brand_name']) ? ($Page->parameter .= 'search_brand_name='.$_POST['search_brand_name']) : '';
 			// 进行分页数据查询 注意limit方法的参数要使用Page类的属性
 			$brand_list = $Brand->where($where)->order('sort_order')->limit($Page->firstRow.','.$Page->listRows)->select();
-			dump($brand_list);
+			// dump($brand_list);
 			$this->assign('brand_list',$brand_list);// 赋值数据集
 			$this->assign('search_brand_name', $_POST['search_brand_name']);
 			$this->assign('page',$show);// 赋值分页输出
 			// dump($Page->show());
+
+			$this->assign('page_name', '商品品牌');
+			$this->assign('button_name', '添加品牌');
+			$this->assign('button_url', 'goods_brand_edit_view');
 			$this->display(); // 输出模板
 		}
 		/**
@@ -781,7 +798,7 @@
 		 */
 		public function goods_brand_edit()
 		{
-			dump($_POST);
+			// dump($_POST);
 			IS_POST || isset($_GET['act']) ? '' : $this->error('非法操作');
 			$Brand = M('brand');
 			if (!empty($_POST['act']) && $_POST['act'] == 'insert') {
@@ -823,6 +840,9 @@
 				$this->assign('brand', $brand);
 				$this->assign('update', 1);
 			}
+			$this->assign('page_name', '编辑品牌记录');
+			$this->assign('button_name', '商品品牌');
+			$this->assign('button_url', 'goods_brand_view');
 			$this->display();
 		}
 		// public function goods_brand_update()
@@ -830,6 +850,11 @@
 		// 	dump($_POST);exit;
 		// }
 				// 商品类型
+		/**
+		 * 品牌类型 页面
+		 * [goods_type_view description]
+		 * @return [type]
+		 */
 		public function goods_type_view()
 		{
 		    $goods_model = D('Goods');
@@ -842,11 +867,62 @@
 		    $this->assign('goods_type_arr',   $good_type_list['type']);
 		    $this->assign('record_count', $good_type_list['record_count']);
 
+		    $this->assign('page_name', '商品类型');
+			$this->assign('button_name', '建立商品类型');
+			$this->assign('button_url', 'goods_type_edit_view');
 		    $this->display();
 		}
+
+		public function goods_type_edit_view()
+		{
+			if (isset($_GET['cat_id'])) 
+			{
+				$goods_type = M('goods_type')->where('cat_id = '.$_GET['cat_id'])->find();
+				$this->assign('goods_type', $goods_type);
+				$this->assign('update', 1);
+			}
+			$this->assign('page_name', '编辑商品类型');
+			$this->assign('button_name', '商品类型列表');
+			$this->assign('button_url', 'goods_type_view');
+			$this->display();
+		}
+
+		public function goods_type_edit()
+		{
+			IS_POST || isset($_GET['act']) ? '' : $this->error('非法操作');
+			$goods_type = M('goods_type');
+			if (!empty($_POST['act']) && $_POST['act'] == 'insert') {
+				$operation = '添加商品类型';
+				$goods_type->create();
+				$boolean = $goods_type->add();
+			}
+			elseif (!empty($_POST['act']) && $_POST['act'] == 'update') 
+			{
+				$operation = '更新商品类型';
+				$goods_type->create();
+				$boolean = $goods_type->save();
+			}
+			elseif (isset($_GET['act']) && $_GET['act'] == 'remove' && !empty($_GET['cat_id'])) 
+			{
+				// dump($_GET);
+				$operation = '删除商品类型';
+				// $data['cat_id'] = $_GET['cat_id'];
+				// $data['is_show'] = 0;
+				// $boolean = $goods_type->where('cat_id='.intval($_GET['cat_id']))->save($data);
+				$boolean = $goods_type->where('cat_id='.intval($_GET['cat_id']))->delete();
+			}
+			else
+			{
+				$this->error('操作失败, 请重新操作');
+			}
+			$boolean ? $this->success($operation.'成功') : $this->error($operation.'失败');
+		}
+
+
 			// VIEW.5.  用户评论
 		public function goods_comment_view(){
-			
+
+			$this->assign('page_name', '用户评论');
 			$this->display();
 		}
 			// VIEW.6.  商品回收站
@@ -864,6 +940,10 @@
 			$this->assign('COUNT', count($goods_list));
 			$this->assign('PAGECOUNT', ceil(count($goods_list)/$page_size));
 			$this->assign('goods_list', array_slice($goods_list, 0, $page_size));
+
+			$this->assign('page_name', '商品回收站');
+			$this->assign('button_name', '商品列表');
+			$this->assign('button_url', 'goods_list_view');
 			$this->display();
 		}
 			// VIEW.7.  商品上下架

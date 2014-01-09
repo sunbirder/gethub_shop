@@ -493,7 +493,7 @@
 	               "FROM ". table('goods_type'). " AS t ".
 	               "LEFT JOIN ". table('attribute'). " AS a ON a.cat_id=t.cat_id ".
 	               "GROUP BY t.cat_id " ;
-	        echo $sql;
+	        // echo $sql;
 	        // set_filter($filter, $sql);
 	    // }
 	    // else
