@@ -1,9 +1,6 @@
+<!-- $Id: goods_search.htm 16790 2009-11-10 08:56:15Z wangleisvn $ -->
+<include file='brand_search'/>
 <form method="post" action="" name="listForm">
-<div class="form-div">
-    <img width="26" height="22" border="0" alt="SEARCH" src="__IMG__/icon_search.gif">
-     <input type="text" size="15" name="search_brand_name" value="{$search_brand_name}">
-    <input type="submit" class="button" value=" 搜索 ">
-</div>
 <!-- start brand list -->
 <div class="list-div" id="listDiv">
 
@@ -16,27 +13,189 @@
       <th>是否显示</th>
       <th>操作</th>
     </tr>
-        <foreach name="brand_list" item="brand">
-		<tr>
-		  <td class="first-cell">
-			<!-- <span style="float:right">{$brand.brand_logo}</span> -->
-			<span onclick="javascript:listTable.edit(this, 'edit_brand_name', {$brand.brand_id})">{$brand.brand_name}</span>
-		  </td>
-		  <td>{$brand.site_url}</td>
-		  <td align="left">{$brand.brand_desc}</td>
-		  <td align="right"><span onclick="javascript:listTable.edit(this, 'edit_sort_order', {$brand.brand_id})">{$brand.sort_order}</span></td>
-		  <td align="center"><img src="__IMG__/<if condition='$brand.is_show eq 1'>yes<else/>no</if>.gif" onclick="listTable.toggle(this, 'toggle_show', {$brand.brand_id})" /></td>
-		  <td align="center">
-			<a href="goods_brand_edit_view?brand_id={$brand.brand_id}" title="编辑"> 编辑 </a> |
-			<a href="javascript:;" onclick="brand_remove('你确认要删除选定的商品品牌吗?', {$brand.brand_id})" title="删除"> 删除 </a> 
-		  </td>
-		</tr>
-		<!-- {foreachelse}
-		<tr><td class="no-records" colspan="10">{$lang.no_records}</td></tr> -->
-		</foreach>
+        <tr>
+      <td class="first-cell">
+        <span style="float:right"><a href="../data/brandlogo/1240803062307572427.gif" target="_brank"><img src="__IMG__/picflag.gif" width="16" height="16" border="0" alt=品牌LOGO /></a></span>
+        <span onclick="javascript:listTable.edit(this, 'edit_brand_name', 1)">诺基亚</span>
+      </td>
+      <td><a href="http://www.nokia.com.cn/" target="_brank">http://www.nokia.com.cn/</a></td>
+      <td align="left">公司网站：http://www.nokia.com.cn/
+
+客服电话：...</td>
+      <td align="right"><span onclick="javascript:listTable.edit(this, 'edit_sort_order', 1)">50</span></td>
+      <td align="center"><img src="__IMG__/yes.gif" onclick="listTable.toggle(this, 'toggle_show', 1)" /></td>
+      <td align="center">
+        <a href="brand.php?act=edit&id=1" title="编辑">编辑</a> |
+        <a href="javascript:;" onclick="listTable.remove(1, '你确认要删除选定的商品品牌吗？')" title="编辑">移除</a> 
+      </td>
+    </tr>
+        <tr>
+      <td class="first-cell">
+        <span style="float:right"><a href="../data/brandlogo/1240802922410634065.gif" target="_brank"><img src="__IMG__/picflag.gif" width="16" height="16" border="0" alt=品牌LOGO /></a></span>
+        <span onclick="javascript:listTable.edit(this, 'edit_brand_name', 2)">摩托罗拉</span>
+      </td>
+      <td><a href="http://www.motorola.com.cn" target="_brank">http://www.motorola.com.cn</a></td>
+      <td align="left">官方咨询电话：4008105050
+售后网点：http://www.mo...</td>
+      <td align="right"><span onclick="javascript:listTable.edit(this, 'edit_sort_order', 2)">50</span></td>
+      <td align="center"><img src="__IMG__/yes.gif" onclick="listTable.toggle(this, 'toggle_show', 2)" /></td>
+      <td align="center">
+        <a href="brand.php?act=edit&id=2" title="编辑">编辑</a> |
+        <a href="javascript:;" onclick="listTable.remove(2, '你确认要删除选定的商品品牌吗？')" title="编辑">移除</a> 
+      </td>
+    </tr>
+        <tr>
+      <td class="first-cell">
+        <span style="float:right"><a href="../data/brandlogo/1240803144788047486.gif" target="_brank"><img src="__IMG__/picflag.gif" width="16" height="16" border="0" alt=品牌LOGO /></a></span>
+        <span onclick="javascript:listTable.edit(this, 'edit_brand_name', 3)">多普达</span>
+      </td>
+      <td><a href="http://www.dopod.com " target="_brank">http://www.dopod.com </a></td>
+      <td align="left">官方咨询电话：4008201668
+售后网点：http://www.do...</td>
+      <td align="right"><span onclick="javascript:listTable.edit(this, 'edit_sort_order', 3)">50</span></td>
+      <td align="center"><img src="__IMG__/yes.gif" onclick="listTable.toggle(this, 'toggle_show', 3)" /></td>
+      <td align="center">
+        <a href="brand.php?act=edit&id=3" title="编辑">编辑</a> |
+        <a href="javascript:;" onclick="listTable.remove(3, '你确认要删除选定的商品品牌吗？')" title="编辑">移除</a> 
+      </td>
+    </tr>
+        <tr>
+      <td class="first-cell">
+        <span style="float:right"><a href="../data/brandlogo/1240803247838195732.gif" target="_brank"><img src="__IMG__/picflag.gif" width="16" height="16" border="0" alt=品牌LOGO /></a></span>
+        <span onclick="javascript:listTable.edit(this, 'edit_brand_name', 4)">飞利浦</span>
+      </td>
+      <td><a href="http://www.philips.com.cn " target="_brank">http://www.philips.com.cn </a></td>
+      <td align="left">官方咨询电话：4008800008
+售后网点：http://www.ph...</td>
+      <td align="right"><span onclick="javascript:listTable.edit(this, 'edit_sort_order', 4)">50</span></td>
+      <td align="center"><img src="__IMG__/yes.gif" onclick="listTable.toggle(this, 'toggle_show', 4)" /></td>
+      <td align="center">
+        <a href="brand.php?act=edit&id=4" title="编辑">编辑</a> |
+        <a href="javascript:;" onclick="listTable.remove(4, '你确认要删除选定的商品品牌吗？')" title="编辑">移除</a> 
+      </td>
+    </tr>
+        <tr>
+      <td class="first-cell">
+        <span style="float:right"><a href="../data/brandlogo/1240803352280856940.gif" target="_brank"><img src="__IMG__/picflag.gif" width="16" height="16" border="0" alt=品牌LOGO /></a></span>
+        <span onclick="javascript:listTable.edit(this, 'edit_brand_name', 5)">夏新</span>
+      </td>
+      <td><a href="http://www.amobile.com.cn" target="_brank">http://www.amobile.com.cn</a></td>
+      <td align="left">官方咨询电话：4008875777
+售后网点：http://www.am...</td>
+      <td align="right"><span onclick="javascript:listTable.edit(this, 'edit_sort_order', 5)">50</span></td>
+      <td align="center"><img src="__IMG__/yes.gif" onclick="listTable.toggle(this, 'toggle_show', 5)" /></td>
+      <td align="center">
+        <a href="brand.php?act=edit&id=5" title="编辑">编辑</a> |
+        <a href="javascript:;" onclick="listTable.remove(5, '你确认要删除选定的商品品牌吗？')" title="编辑">移除</a> 
+      </td>
+    </tr>
+        <tr>
+      <td class="first-cell">
+        <span style="float:right"><a href="../data/brandlogo/1240803412367015368.gif" target="_brank"><img src="__IMG__/picflag.gif" width="16" height="16" border="0" alt=品牌LOGO /></a></span>
+        <span onclick="javascript:listTable.edit(this, 'edit_brand_name', 6)">三星</span>
+      </td>
+      <td><a href="http://cn.samsungmobile.com" target="_brank">http://cn.samsungmobile.com</a></td>
+      <td align="left">官方咨询电话：8008105858
+售后网点：http://cn.sam...</td>
+      <td align="right"><span onclick="javascript:listTable.edit(this, 'edit_sort_order', 6)">50</span></td>
+      <td align="center"><img src="__IMG__/yes.gif" onclick="listTable.toggle(this, 'toggle_show', 6)" /></td>
+      <td align="center">
+        <a href="brand.php?act=edit&id=6" title="编辑">编辑</a> |
+        <a href="javascript:;" onclick="listTable.remove(6, '你确认要删除选定的商品品牌吗？')" title="编辑">移除</a> 
+      </td>
+    </tr>
+        <tr>
+      <td class="first-cell">
+        <span style="float:right"><a href="../data/brandlogo/1240803482283160654.gif" target="_brank"><img src="__IMG__/picflag.gif" width="16" height="16" border="0" alt=品牌LOGO /></a></span>
+        <span onclick="javascript:listTable.edit(this, 'edit_brand_name', 7)">索爱</span>
+      </td>
+      <td><a href="http://www.sonyericsson.com.cn/" target="_brank">http://www.sonyericsson.com.cn/</a></td>
+      <td align="left">官方咨询电话：4008100000
+售后网点：http://www.so...</td>
+      <td align="right"><span onclick="javascript:listTable.edit(this, 'edit_sort_order', 7)">50</span></td>
+      <td align="center"><img src="__IMG__/yes.gif" onclick="listTable.toggle(this, 'toggle_show', 7)" /></td>
+      <td align="center">
+        <a href="brand.php?act=edit&id=7" title="编辑">编辑</a> |
+        <a href="javascript:;" onclick="listTable.remove(7, '你确认要删除选定的商品品牌吗？')" title="编辑">移除</a> 
+      </td>
+    </tr>
+        <tr>
+      <td class="first-cell">
+        <span style="float:right"><a href="../data/brandlogo/1240803526904622792.gif" target="_brank"><img src="__IMG__/picflag.gif" width="16" height="16" border="0" alt=品牌LOGO /></a></span>
+        <span onclick="javascript:listTable.edit(this, 'edit_brand_name', 8)">LG</span>
+      </td>
+      <td><a href="http://cn.wowlg.com" target="_brank">http://cn.wowlg.com</a></td>
+      <td align="left">官方咨询电话：4008199999
+售后网点：http://www.lg...</td>
+      <td align="right"><span onclick="javascript:listTable.edit(this, 'edit_sort_order', 8)">50</span></td>
+      <td align="center"><img src="__IMG__/yes.gif" onclick="listTable.toggle(this, 'toggle_show', 8)" /></td>
+      <td align="center">
+        <a href="brand.php?act=edit&id=8" title="编辑">编辑</a> |
+        <a href="javascript:;" onclick="listTable.remove(8, '你确认要删除选定的商品品牌吗？')" title="编辑">移除</a> 
+      </td>
+    </tr>
+        <tr>
+      <td class="first-cell">
+        <span style="float:right"><a href="../data/brandlogo/1240803578417877983.gif" target="_brank"><img src="__IMG__/picflag.gif" width="16" height="16" border="0" alt=品牌LOGO /></a></span>
+        <span onclick="javascript:listTable.edit(this, 'edit_brand_name', 9)">联想</span>
+      </td>
+      <td><a href="http://www.lenovomobile.com/" target="_brank">http://www.lenovomobile.com/</a></td>
+      <td align="left">官方咨询电话：4008188818
+售后网点：http://www.le...</td>
+      <td align="right"><span onclick="javascript:listTable.edit(this, 'edit_sort_order', 9)">50</span></td>
+      <td align="center"><img src="__IMG__/yes.gif" onclick="listTable.toggle(this, 'toggle_show', 9)" /></td>
+      <td align="center">
+        <a href="brand.php?act=edit&id=9" title="编辑">编辑</a> |
+        <a href="javascript:;" onclick="listTable.remove(9, '你确认要删除选定的商品品牌吗？')" title="编辑">移除</a> 
+      </td>
+    </tr>
+        <tr>
+      <td class="first-cell">
+        <span style="float:right"></span>
+        <span onclick="javascript:listTable.edit(this, 'edit_brand_name', 10)">金立</span>
+      </td>
+      <td><a href="http://www.gionee.net" target="_brank">http://www.gionee.net</a></td>
+      <td align="left">官方咨询电话：4007796666
+售后网点：http://www.gi...</td>
+      <td align="right"><span onclick="javascript:listTable.edit(this, 'edit_sort_order', 10)">50</span></td>
+      <td align="center"><img src="__IMG__/yes.gif" onclick="listTable.toggle(this, 'toggle_show', 10)" /></td>
+      <td align="center">
+        <a href="brand.php?act=edit&id=10" title="编辑">编辑</a> |
+        <a href="javascript:;" onclick="listTable.remove(10, '你确认要删除选定的商品品牌吗？')" title="编辑">移除</a> 
+      </td>
+    </tr>
+        <tr>
+      <td class="first-cell">
+        <span style="float:right"><a href="../data/brandlogo/1240803736391383580.gif" target="_brank"><img src="__IMG__/picflag.gif" width="16" height="16" border="0" alt=品牌LOGO /></a></span>
+        <span onclick="javascript:listTable.edit(this, 'edit_brand_name', 11)">  恒基伟业</span>
+      </td>
+      <td><a href="http://www.htwchina.com" target="_brank">http://www.htwchina.com</a></td>
+      <td align="left">官方咨询电话：4008899126
+售后网点：http://www.ht...</td>
+      <td align="right"><span onclick="javascript:listTable.edit(this, 'edit_sort_order', 11)">50</span></td>
+      <td align="center"><img src="__IMG__/yes.gif" onclick="listTable.toggle(this, 'toggle_show', 11)" /></td>
+      <td align="center">
+        <a href="brand.php?act=edit&id=11" title="编辑">编辑</a> |
+        <a href="javascript:;" onclick="listTable.remove(11, '你确认要删除选定的商品品牌吗？')" title="编辑">移除</a> 
+      </td>
+    </tr>
         <tr>
       <td align="right" nowrap="true" colspan="6">
-		{$page}
+            <!-- $Id: page.htm 14216 2008-03-10 02:27:21Z testyang $ -->
+            <div id="turn-page">
+        总计  <span id="totalRecords">11</span>
+        个记录分为 <span id="totalPages">1</span>
+        页当前第 <span id="pageCurrent">1</span>
+        页，每页 <input type='text' size='3' id='pageSize' value="15" onkeypress="return listTable.changePageSize(event)" />
+        <span id="page-link">
+          <a href="javascript:listTable.gotoPageFirst()">第一页</a>
+          <a href="javascript:listTable.gotoPagePrev()">上一页</a>
+          <a href="javascript:listTable.gotoPageNext()">下一页</a>
+          <a href="javascript:listTable.gotoPageLast()">最末页</a>
+          <select id="gotoPage" onchange="listTable.gotoPage(this.value)">
+            <option value='1'>1</option>          </select>
+        </span>
+      </div>
       </td>
     </tr>
   </table>
@@ -46,15 +205,6 @@
 </form>
 
 <script type="text/javascript" language="javascript">
-
-	function brand_remove(str, brand_id)
-	{	//alert(111);
-		 if(confirm(str))
-		 {
-			window.location.href = 'goods_brand_edit?act=remove&brand_id='+brand_id;
-		 }
-	}
-
   <!--
   listTable.recordCount = 11;
   listTable.pageCount = 1;
