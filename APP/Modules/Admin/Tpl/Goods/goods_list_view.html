@@ -79,13 +79,13 @@
       <a href="../goods.php?id={$goods.goods_id}" target="_blank" title="查看">
         <img src="__IMG__/icon_view.gif" width="16" height="16" border="0" />    
       </a>
-      <a href="goods.php?act=edit&goods_id={$goods.goods_id}" title="编辑">
+      <a href="goods_operation_view?goods_id={$goods.goods_id}" title="编辑">
         <img src="__IMG__/icon_edit.gif" width="16" height="16" border="0" />    
       </a>
-      <a href="goods.php?act=copy&goods_id={$goods.goods_id}" title="复制">
+      <!-- <a href="goods.php?act=copy&goods_id={$goods.goods_id}" title="复制">
         <img src="__IMG__/icon_copy.gif" width="16" height="16" border="0" />    
-      </a>
-      <a href="javascript:;" onclick="listTable.remove({$goods.goods_id}, '您确实要把该商品放入回收站吗？')" title="回收站">
+      </a> -->
+      <a href="javascript:;" onclick="removeConfirm({$goods.goods_id})" title="回收站">
         <img src="__IMG__/icon_trash.gif" width="16" height="16" border="0" />    
       </a>
       <!-- <if condition='$goods.goods_type eq 0'>
@@ -216,7 +216,7 @@
           return true;
       }
   }
-
+// 全选效果
   function changeAction()
   {
       var frm = document.forms['listForm'];
@@ -231,6 +231,15 @@
           frm.submit();
       }
   }
+
+  function removeConfirm(goods_id)
+  {  alert(goods_id);
+     if(confirm('您确实要把该商品放入回收站吗？'))
+      {
+        location.href="goods_curd_bath?act=trash&goods_id="+goods_id;
+      }
+  }
+
 
 </script>
  

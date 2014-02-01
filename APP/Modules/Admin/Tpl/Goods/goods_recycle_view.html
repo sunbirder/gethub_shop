@@ -40,8 +40,8 @@
       <span>{$goods.shop_price}</span>
     </td>
     <td align="center">
-      <a href="javascript:;" onclick="listTable.remove({$goods.goods_id}, '您确实要把该商品还原吗？', 'restore_goods')">还原</a> |
-      <a href="javascript:;" onclick="listTable.remove({$goods.goods_id}, '您确实要删除该商品吗？', 'drop_goods')">删除</a>
+      <a href="javascript:;" onclick="restoreConfirm({$goods.goods_id})">还原</a> |
+      <a href="javascript:;" onclick="dropConfirm({$goods.goods_id})">删除</a>
     </td>
   </tr>
   </foreach>
@@ -59,8 +59,27 @@
         <option value="restore">还原</option>
         <option value="drop">移除</option>
       </select>
-      <select name="target_cat" style="display:none" onchange="checkIsLeaf(this)"><option value="0">请选择...</caption><option value="17" >asdsa</option><option value="1" >手机类型</option><option value="3" >&nbsp;&nbsp;&nbsp;&nbsp;GSM手机</option><option value="4" >&nbsp;&nbsp;&nbsp;&nbsp;3G手机</option><option value="5" >&nbsp;&nbsp;&nbsp;&nbsp;双模手机</option><option value="2" >&nbsp;&nbsp;&nbsp;&nbsp;CDMA手机</option><option value="16" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;法国色粉</option><option value="18" >dasdsad</option><option value="12" >充值卡</option><option value="14" >&nbsp;&nbsp;&nbsp;&nbsp;移动手机充值卡</option><option value="15" >&nbsp;&nbsp;&nbsp;&nbsp;联通手机充值卡</option><option value="13" >&nbsp;&nbsp;&nbsp;&nbsp;小灵通/固话充值卡</option><option value="6" >手机配件</option><option value="11" >&nbsp;&nbsp;&nbsp;&nbsp;读卡器和内存卡</option><option value="7" >&nbsp;&nbsp;&nbsp;&nbsp;充电器</option><option value="8" >&nbsp;&nbsp;&nbsp;&nbsp;耳机</option><option value="9" >&nbsp;&nbsp;&nbsp;&nbsp;电池</option></select>
-      <input type="submit" value=" 确定 " id="btnSubmit" name="btnSubmit" class="button" disabled="true" />
+      <select name="target_cat" style="display:none" onchange="checkIsLeaf(this)">
+        <option value="0">请选择...</caption>
+        <option value="17" >asdsa</option>
+        <option value="1" >手机类型</option>
+        <option value="3" >&nbsp;&nbsp;&nbsp;&nbsp;GSM手机</option>
+        <option value="4" >&nbsp;&nbsp;&nbsp;&nbsp;3G手机</option>
+        <option value="5" >&nbsp;&nbsp;&nbsp;&nbsp;双模手机</option>
+        <option value="2" >&nbsp;&nbsp;&nbsp;&nbsp;CDMA手机</option>
+        <option value="16" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;法国色粉</option>
+        <option value="18" >dasdsad</option>
+        <option value="12" >充值卡</option>
+        <option value="14" >&nbsp;&nbsp;&nbsp;&nbsp;移动手机充值卡</option>
+        <option value="15" >&nbsp;&nbsp;&nbsp;&nbsp;联通手机充值卡</option>
+        <option value="13" >&nbsp;&nbsp;&nbsp;&nbsp;小灵通/固话充值卡</option>
+        <option value="6" >手机配件</option>
+        <option value="11" >&nbsp;&nbsp;&nbsp;&nbsp;读卡器和内存卡</option>
+        <option value="7" >&nbsp;&nbsp;&nbsp;&nbsp;充电器</option>
+        <option value="8" >&nbsp;&nbsp;&nbsp;&nbsp;耳机</option>
+        <option value="9" >&nbsp;&nbsp;&nbsp;&nbsp;电池</option>
+      </select>
+      <input type="submit" value=" 确定 " id="btnSubmit" name="btnSubmit" class="button" disabled="true" />      
         </div>
       </form>
 
@@ -170,7 +189,21 @@ var cancel_color = "无样式";
           frm.submit();
       }
   }
-  
 
+  function restoreConfirm(goods_id)
+  { alert(goods_id);
+      if(confirm('您确实要把该商品还原吗？'))
+      {
+        location.href="goods_curd_bath?act=restore&goods_id="+goods_id;
+      }
+  }
+
+ function dropConfirm(goods_id)
+  {
+      if(confirm('您确实要删除该商品吗？'))
+      {
+        location.href="goods_curd_bath?act=drop&goods_id="+goods_id;
+      }
+  }
 </script>
  

@@ -1,0 +1,77 @@
+<div class="main-div">
+<form method="post" action="goods_brand_edit" name="theForm" enctype="multipart/form-data" onsubmit="return validate()">
+<table cellspacing="1" cellpadding="3" width="100%">
+  <tr>
+    <td class="label">品牌名称</td>
+    <td><input type="text" name="brand_name" maxlength="60" value="{$brand.brand_name}" /><span class="require-field">*</span></td>
+  </tr>
+  <tr>
+    <td class="label">品牌网址</td>
+    <td><input type="text" name="site_url" maxlength="60" size="40" value="{$brand.site_url}" /></td>
+  </tr>
+  <!-- <tr>
+    <td class="label"><a href="javascript:showNotice('warn_brandlogo');" title="点击此处查看提示信息">
+        <img src="__IMG__/notice.gif" width="16" height="16" border="0" alt="点击此处查看提示信息"></a>品牌LOGO
+	</td>
+    <td><input type="file" name="brand_logo" id="logo" size="45">    <br /><span class="notice-span" style="display:block"  id="warn_brandlogo">
+        请上传图片，做为品牌的LOGO！        </span>
+    </td>
+  </tr> -->
+  <tr>
+    <td class="label">品牌描述</td>
+    <td><textarea  name="brand_desc" cols="60" rows="4"  >{$brand.brand_desc}</textarea></td>
+  </tr>
+  <tr>
+    <td class="label">排序</td>
+    <td><input type="text" name="sort_order" maxlength="40" size="15" value="<if condition='$brand.sort_order gt 0'>{$brand.sort_order}<else/>50</if>" /></td>
+  </tr>
+  <tr>
+    <td class="label">是否显示</td>
+    <td><input type="radio" name="is_show" value="1" checked="checked" /> 是        <input type="radio" name="is_show" value="0"  /> 否        (当品牌下还没有商品的时候，首页及分类页的品牌区将不会显示该品牌。)
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center"><br />
+      <input type="submit" class="button" value=" 确定 " />
+      <input type="reset" class="button" value=" 重置 " />
+      <input type="hidden" name="act" value="<if condition='$update eq 1'>update<else/>insert</if>" />
+      <!-- <input type="hidden" name="old_brandname" value="" /> -->
+      <input type="hidden" name="brand_id" value="{$brand.brand_id}" />
+      <!-- <input type="hidden" name="old_brandlogo" value=""> -->
+    </td>
+  </tr>
+</table>
+</form>
+</div>
+<script type="text/javascript" src="__JS__/utils.js"></script>
+<script type="text/javascript" src="__JS__/validator.js"></script>
+<script language="JavaScript">
+<!--
+document.forms['theForm'].elements['brand_name'].focus();
+onload = function()
+{
+    // 开始检查订单
+    startCheckOrder();
+}
+// 这里把JS用到的所有语言都赋值到这里
+var process_request = "正在处理您的请求...";
+var todolist_caption = "记事本";
+var todolist_autosave = "自动保存";
+var todolist_save = "保存";
+var todolist_clear = "清除";
+var todolist_confirm_save = "是否将更改保存到记事本？";
+var todolist_confirm_clear = "是否清空内容？";
+var no_brandname = "您必须输入品牌名称！";
+var require_num = "排序序号必须是一个数字";
+/**
+ * 检查表单输入的数据
+ */
+function validate()
+{ 
+    validator = new Validator("theForm");
+    validator.required("brand_name",  no_brandname);
+    validator.isNumber("sort_order", require_num, true);
+    return validator.passed();
+}
+//-->
+</script>
